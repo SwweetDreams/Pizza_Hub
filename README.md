@@ -180,28 +180,36 @@ public class Pizza_hub {
 
     public static void procesarPizza() {
         while (true) {
-            System.out.println("----------------------------------------------------------------------------------------------------------");
-            System.out.println("                            🍕 ¡Bienvenido a nuestra carta de pizzas! 🍕");
-            System.out.println("----------------------------------------------------------------------------------------------------------");
-            System.out.println("                              ¿Qué pizza te gustaría ordenar hoy?");
-            System.out.println("\nTenemos estas deliciosas opciones para ti:");
-            System.out.println("\n1. 4 hits en 1       - ¡Cuatro sabores diferentes en una sola pizza!");
-            System.out.println("2. La chili hut      - Para los amantes del picante 🌶️");
-            System.out.println("3. Super suprema     - Nuestra pizza más completa");
-            System.out.println("4. Chicken BBQ       - Pollo a la barbacoa, ¡irresistible!");
-            System.out.println("5. Hawaiana          - El clásico sabor tropical 🍍");
-            System.out.println("6. Americana         - El sabor tradicional que todos aman");
-            System.out.println("7. Continental       - Una experiencia internacional");
-            System.out.println("8. Pepperonii        - ¡Doble pepperoni para los fans!");
-            System.out.println("9. XL clasica        - Cuando el hambre es extra grande");
-            System.out.println("10. Suprema          - ¡Con todos los ingredientes!");
-            System.out.println("11. Mozzarella       - Simple pero deliciosa 🧀");
-            System.out.println("12. Meat lovers      - Para los amantes de la carne");
-            System.out.println("13. Vegetariana      - 100% vegetales frescos 🥬");
+
+        System.out.println("╔═══════════════════════════════════════════════════════════════════════════╗");
+            System.out.println("║         🍕 ¡BIENVENIDO A NUESTRA INCREÍBLE CARTA DE PIZZAS! 🍕            ║");
+            System.out.println("╠═══════════════════════════════════════════════════════════════════════════╣");
+            System.out.println("║             ✨ ¿Qué aventura de sabor quieres probar hoy? ✨               ║");
+            System.out.println("║                                                                           ║");
+            System.out.println("║  【1】 4 HITS EN 1        ┃  Cuatro mundos de sabor en una sola pizza!   ║");
+            System.out.println("║  【2】 LA CHILI HUT       ┃  Para valientes amantes del picante 🌶️        ║");
+            System.out.println("║  【3】 SUPER SUPREMA      ┃  La reina de nuestras pizzas 👑               ║");
+            System.out.println("║  【4】 CHICKEN BBQ        ┃  Pollo BBQ que te hará agua la boca 🍗        ║");
+            System.out.println("║  【5】 HAWAIANA           ┃  El paraíso tropical en tu mesa 🍍            ║");
+            System.out.println("║  【6】 AMERICANA          ┃  El sabor clásico que nunca falla 🇺🇸          ║");
+            System.out.println("║  【7】 CONTINENTAL        ┃  Un viaje de sabores por el mundo 🌍           ║");
+            System.out.println("║  【8】 PEPPERONI          ┃  ¡Doble pepperoni para más diversión! 🎯      ║");
+            System.out.println("║  【9】 XL CLÁSICA         ┃  Porque el hambre grande merece pizza grande  ║");
+            System.out.println("║ 【10】 SUPREMA            ┃  ¡Todos los ingredientes en su máximo esplendor!║");
+            System.out.println("║ 【11】 MOZZARELLA         ┃  La simplicidad del mejor queso 🧀             ║");
+            System.out.println("║ 【12】 MEAT LOVERS        ┃  El festín de los amantes de la carne 🥩      ║");
+            System.out.println("║ 【13】 VEGETARIANA        ┃  Explosión de vegetales frescos 🥬            ║");
+            System.out.println("║                                                                           ║");
+            System.out.println("╠═══════════════════════════════════════════════════════════════════════════╣");
+            System.out.println("║    🌟 ¡Todas nuestras pizzas están hechas con ingredientes premium! 🌟    ║");
+            System.out.println("╚═══════════════════════════════════════════════════════════════════════════╝");
+
             System.out.println("\n0. Volver al menú principal - Si deseas ver otras opciones");
             System.out.println("----------------------------------------------------------------------------------------------------------");
             System.out.print("¿Cuál te gustaría probar? (Ingresa el número): ");
 
+
+            
             int opcion = sc.nextInt();
             sc.nextLine();
 
@@ -2895,29 +2903,39 @@ public class Pizza_hub {
     }
 
     public static void procesarCombosHuts() {
-        System.out.println("\nMenú de Combos Huts:");
-        System.out.println("1. Hut Days - $49.90");
-        System.out.println("2. Hut Days Doble - $39.90");
-        System.out.println("3. Doble o Nada Hut Cheese - $79.90");
-        System.out.println("4. Tripack Grande Hut Cheese - $94.90");
-        System.out.println("5. Combo Doble o Nada Grande - $59.90");
-        System.out.println("6. Combo Semi Full Grande - $59.90");
-        System.out.println("7. Banquete Familiar Hut Cheese - $55.90");
-        System.out.println("8. Tripack Familiar - $99.90");
-        System.out.println("9. Tripack Grande - $79.90");
-        System.out.println("10. Combo Tripack Grande Hut Cheese - $99.90");
-        System.out.println("11. Combo Semi Full Familiar - $79.90");
-        System.out.println("12. Combo Semi Full Familiar Hut Cheese - $89.90");
-        System.out.println("13. Combo Doble o Nada Familiar - $82.90");
-        System.out.println("14. Combo Doble o Nada Familiar Hut Cheese - $92.90");
+       System.out.println("╔═🌸══════════════════════════════════════════════════════════🌸═══╗");
+        System.out.println("║            ♡ ⋆｡ ° ✮ MENÚ DE COMBOS HUTS ✮ ° ｡⋆ ♡                ║");
+        System.out.println("║                     ・。✧♡✧。・゜゜・。                            ║");
+        System.out.println("╠════════════════════•✧✧•════════════════════════════════════════╣");
+        System.out.println("║  1. ✿ Hut Days ..................................... $ 49.90   ║");
+        System.out.println("║  2. ✿ Hut Days Doble ............................... $ 39.90   ║");
+        System.out.println("║  3. ✿ Doble o Nada Hut Cheese ...................... $ 79.90   ║");
+        System.out.println("║  4. ✿ Tripack Grande Hut Cheese .................... $ 94.90   ║");
+        System.out.println("║  5. ✿ Combo Doble o Nada Grande .................... $ 59.90   ║");
+        System.out.println("║  6. ✿ Combo Semi Full Grande ....................... $ 59.90   ║");
+        System.out.println("║  7. ✿ Banquete Familiar Hut Cheese ................. $ 55.90   ║");
+        System.out.println("║  8. ✿ Tripack Familiar ............................. $ 99.90   ║");
+        System.out.println("║  9. ✿ Tripack Grande ............................... $ 79.90   ║");
+        System.out.println("║ 10. ✿ Combo Tripack Grande Hut Cheese .............. $ 99.90   ║");
+        System.out.println("║ 11. ✿ Combo Semi Full Familiar ..................... $ 79.90   ║");
+        System.out.println("║ 12. ✿ Combo Semi Full Familiar Hut Cheese .......... $ 89.90   ║");
+        System.out.println("║ 13. ✿ Combo Doble o Nada Familiar .................. $ 82.90   ║");
+        System.out.println("║ 14. ✿ Combo Doble o Nada Familiar Hut Cheese ....... $ 92.90   ║");
+        System.out.println("╠════════════════════•✧✧•════════════════════════════════════════╣");
+        System.out.println("║          ♡ Gracias por preferir nuestros combos ♡              ║");
+        System.out.println("╚═🌸══════════════════════════════════════════════════════════🌸═══╝");
 
         System.out.print("Seleccione una opción: ");
         int opcion = sc.nextInt();
         sc.nextLine();
 
+        System.out.println("------------------------------------------------------------------------");
+
         System.out.print("¿Cuántos combos desea? ");
         int cantidad = sc.nextInt();
         sc.nextLine();
+
+        System.out.println("------------------------------------------------------------------------");
 
         double precio = 0;
         String tipoCombo = "";
