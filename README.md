@@ -3321,7 +3321,7 @@ public class Pizza_hub {
             totalCarrito += producto.calcularSubtotal();
 
             System.out.println("--------------------------------------------------------------------");
-            System.out.println("El total a pagar es de: "+ df.format(total));
+            System.out.println("El total a pagar es de: "+ df.format(totalCarrito));
             System.out.println("Ingresar saldo: ");
             double Saldo = sc.nextInt();
             if (Saldo < totalCarrito) {
