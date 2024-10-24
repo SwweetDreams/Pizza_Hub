@@ -181,7 +181,7 @@ public class Pizza_hub {
     public static void procesarPizza() {
         while (true) {
 
-        System.out.println("╔═══════════════════════════════════════════════════════════════════════════╗");
+            System.out.println("╔═══════════════════════════════════════════════════════════════════════════╗");
             System.out.println("║         🍕 ¡BIENVENIDO A NUESTRA INCREÍBLE CARTA DE PIZZAS! 🍕            ║");
             System.out.println("╠═══════════════════════════════════════════════════════════════════════════╣");
             System.out.println("║             ✨ ¿Qué aventura de sabor quieres probar hoy? ✨               ║");
@@ -209,7 +209,7 @@ public class Pizza_hub {
             System.out.print("¿Cuál te gustaría probar? (Ingresa el número): ");
 
 
-            
+
             int opcion = sc.nextInt();
             sc.nextLine();
 
@@ -2903,7 +2903,7 @@ public class Pizza_hub {
     }
 
     public static void procesarCombosHuts() {
-       System.out.println("╔═🌸══════════════════════════════════════════════════════════🌸═══╗");
+        System.out.println("╔═🌸══════════════════════════════════════════════════════════🌸═══╗");
         System.out.println("║            ♡ ⋆｡ ° ✮ MENÚ DE COMBOS HUTS ✮ ° ｡⋆ ♡                ║");
         System.out.println("║                     ・。✧♡✧。・゜゜・。                            ║");
         System.out.println("╠════════════════════•✧✧•════════════════════════════════════════╣");
@@ -3330,6 +3330,7 @@ public class Pizza_hub {
         System.out.println("--------------------------------------------------------------------");
         System.out.println("¡Gracias por su compra!");
         System.out.println("  SIUUUUUUUUUUUUUUUU");
+        System.exit(0);
     }
 
     public static void medotoPago() {
