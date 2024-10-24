@@ -3326,7 +3326,7 @@ public class Pizza_hub {
         }
         System.out.println("Subtotal: $" + df.format(subtotal));
         System.out.println("IGV: $" + df.format(igv));
-        System.out.println("Total: $" + df.format(total));
+        System.out.println("Total: $" + df.format(totalCarrito));
         System.out.println("--------------------------------------------------------------------");
         System.out.println("¡Gracias por su compra!");
         System.out.println("  SIUUUUUUUUUUUUUUUU");
