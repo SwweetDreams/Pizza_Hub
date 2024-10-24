@@ -179,69 +179,92 @@ public class Pizza_hub {
     }
 
     public static void procesarPizza() {
-        System.out.println("\nMenú de pizzas:");
-        System.out.println("1. 4 hits en 1");
-        System.out.println("2. La chili hut");
-        System.out.println("3. Super suprema");
-        System.out.println("4. Chicken BBQ");
-        System.out.println("5. Hawaiana ");
-        System.out.println("6. Americana ");
-        System.out.println("7. Continental ");
-        System.out.println("8. Pepperonii ");
-        System.out.println("9. XL clasica ");
-        System.out.println("10. Suprema ");
-        System.out.println("11. Mozzarella ");
-        System.out.println("12. Meat lovers ");
-        System.out.println("13. Vegetariana ");
-        System.out.print("Seleccione una opción: ");
-        int opcion = sc.nextInt();
-        sc.nextLine();
+       while (true) {
+       
+                System.out.println("╔═══════════════════════════════════════════════════════════════════════════╗");
+                System.out.println("║         🍕 ¡BIENVENIDO A NUESTRA INCREÍBLE CARTA DE PIZZAS! 🍕            ║");
+                System.out.println("╠═══════════════════════════════════════════════════════════════════════════╣");
+                System.out.println("║             ✨ ¿Qué aventura de sabor quieres probar hoy? ✨               ║");
+                System.out.println("║                                                                           ║");
+                System.out.println("║  【1】 4 HITS EN 1        ┃  Cuatro mundos de sabor en una sola pizza!   ║");
+                System.out.println("║  【2】 LA CHILI HUT       ┃  Para valientes amantes del picante 🌶️        ║");
+                System.out.println("║  【3】 SUPER SUPREMA      ┃  La reina de nuestras pizzas 👑               ║");
+                System.out.println("║  【4】 CHICKEN BBQ        ┃  Pollo BBQ que te hará agua la boca 🍗        ║");
+                System.out.println("║  【5】 HAWAIANA           ┃  El paraíso tropical en tu mesa 🍍            ║");
+                System.out.println("║  【6】 AMERICANA          ┃  El sabor clásico que nunca falla 🇺🇸          ║");
+                System.out.println("║  【7】 CONTINENTAL        ┃  Un viaje de sabores por el mundo 🌍           ║");
+                System.out.println("║  【8】 PEPPERONI          ┃  ¡Doble pepperoni para más diversión! 🎯      ║");
+                System.out.println("║  【9】 XL CLÁSICA         ┃  Porque el hambre grande merece pizza grande  ║");
+                System.out.println("║ 【10】 SUPREMA            ┃  ¡Todos los ingredientes en su máximo esplendor!║");
+                System.out.println("║ 【11】 MOZZARELLA         ┃  La simplicidad del mejor queso 🧀             ║");
+                System.out.println("║ 【12】 MEAT LOVERS        ┃  El festín de los amantes de la carne 🥩      ║");
+                System.out.println("║ 【13】 VEGETARIANA        ┃  Explosión de vegetales frescos 🥬            ║");
+                System.out.println("║                                                                           ║");
+                System.out.println("╠═══════════════════════════════════════════════════════════════════════════╣");
+                System.out.println("║    🌟 ¡Todas nuestras pizzas están hechas con ingredientes premium! 🌟    ║");
+                System.out.println("╚═══════════════════════════════════════════════════════════════════════════╝");
+                
+                System.out.println("\n0. Volver al menú principal - Si deseas ver otras opciones");
+                System.out.println("----------------------------------------------------------------------------------------------------------");
+                System.out.print("¿Cuál te gustaría probar? (Ingresa el número): ");
 
-        switch (opcion) {
-            case 1:
-                procesar4HitsEn1();
-                break;
-            case 2:
-                procesarLaChiliHut();
-                break;
-            case 3:
-                procesarSuperSuprema();
-                break;
-            case 4:
-                procesarChickenBBQ();
-                break;
-            case 5:
-                procesarHawaiana();
-                break;
-            case 6:
-                procesarAmericana();
-                break;
-            case 7:
-                procesarContinental();
-                break;
-            case 8:
-                procesarPepperonii();
-                break;
-            case 9:
-                procesarXLClasica();
-                break;
-            case 10:
-                procesarSuprema();
-                break;
-            case 11:
-                procesarMozzarella();
-                break;
-            case 12:
-                procesarMeatlovers();
-                break;
-            case 13:
-                procesarVegetariana();
-                break;
+                int opcion = sc.nextInt();
+                sc.nextLine();
 
-            default:
-                System.out.println("Opción inválida.");
+                if (opcion == 0) {
+                    System.out.println("----------------------------------------------------------------------------------------------------------");
+                    System.out.println("                    ¡No hay problema! Volvamos al menú principal 😊");
+                    System.out.println("----------------------------------------------------------------------------------------------------------");
+                    return;
+                }
+
+                switch (opcion) {
+                    case 1:
+                        procesar4HitsEn1();
+                        break;
+                    case 2:
+                        procesarLaChiliHut();
+                        break;
+                    case 3:
+                        procesarSuperSuprema();
+                        break;
+                    case 4:
+                        procesarChickenBBQ();
+                        break;
+                    case 5:
+                        procesarHawaiana();
+                        break;
+                    case 6:
+                        procesarAmericana();
+                        break;
+                    case 7:
+                        procesarContinental();
+                        break;
+                    case 8:
+                        procesarPepperonii();
+                        break;
+                    case 9:
+                        procesarXLClasica();
+                        break;
+                    case 10:
+                        procesarSuprema();
+                        break;
+                    case 11:
+                        procesarMozzarella();
+                        break;
+                    case 12:
+                        procesarMeatlovers();
+                        break;
+                    case 13:
+                        procesarVegetariana();
+                        break;
+                    default:
+                        System.out.println("----------------------------------------------------------------------------------------------------------");
+                        System.out.println("           ¡Ups! Esa opción no está en nuestro menú. ¿Podrías elegir otra? 😅");
+                        System.out.println("----------------------------------------------------------------------------------------------------------");
+                }
+            }
         }
-    }
 
     public static void procesar4HitsEn1() {
         System.out.println("\nMenú de 4 hits en 1:");
@@ -2666,21 +2689,27 @@ public class Pizza_hub {
     }
 
     public static void procesarCombosHuts() {
-        System.out.println("\nMenú de Combos Huts:");
-        System.out.println("1. Hut Days - $49.90");
-        System.out.println("2. Hut Days Doble - $39.90");
-        System.out.println("3. Doble o Nada Hut Cheese - $79.90");
-        System.out.println("4. Tripack Grande Hut Cheese - $94.90");
-        System.out.println("5. Combo Doble o Nada Grande - $59.90");
-        System.out.println("6. Combo Semi Full Grande - $59.90");
-        System.out.println("7. Banquete Familiar Hut Cheese - $55.90");
-        System.out.println("8. Tripack Familiar - $99.90");
-        System.out.println("9. Tripack Grande - $79.90");
-        System.out.println("10. Combo Tripack Grande Hut Cheese - $99.90");
-        System.out.println("11. Combo Semi Full Familiar - $79.90");
-        System.out.println("12. Combo Semi Full Familiar Hut Cheese - $89.90");
-        System.out.println("13. Combo Doble o Nada Familiar - $82.90");
-        System.out.println("14. Combo Doble o Nada Familiar Hut Cheese - $92.90");
+System.out.println("╔═🌸══════════════════════════════════════════════════════════🌸═══╗");
+System.out.println("║            ♡ ⋆｡ ° ✮ MENÚ DE COMBOS HUTS ✮ ° ｡⋆ ♡             ║");
+System.out.println("║                     ・。✧♡✧。・゜゜・。                         ║");
+System.out.println("╠════════════════════•✧✧•════════════════════════════════════════╣");
+System.out.println("║  1. ✿ Hut Days ..................................... $ 49.90   ║");
+System.out.println("║  2. ✿ Hut Days Doble ............................... $ 39.90   ║");
+System.out.println("║  3. ✿ Doble o Nada Hut Cheese ...................... $ 79.90   ║");
+System.out.println("║  4. ✿ Tripack Grande Hut Cheese .................... $ 94.90   ║");
+System.out.println("║  5. ✿ Combo Doble o Nada Grande .................... $ 59.90   ║");
+System.out.println("║  6. ✿ Combo Semi Full Grande ....................... $ 59.90   ║");
+System.out.println("║  7. ✿ Banquete Familiar Hut Cheese ................. $ 55.90   ║");
+System.out.println("║  8. ✿ Tripack Familiar ............................. $ 99.90   ║");
+System.out.println("║  9. ✿ Tripack Grande ............................... $ 79.90   ║");
+System.out.println("║ 10. ✿ Combo Tripack Grande Hut Cheese .............. $ 99.90   ║");
+System.out.println("║ 11. ✿ Combo Semi Full Familiar ..................... $ 79.90   ║");
+System.out.println("║ 12. ✿ Combo Semi Full Familiar Hut Cheese .......... $ 89.90   ║");
+System.out.println("║ 13. ✿ Combo Doble o Nada Familiar .................. $ 82.90   ║");
+System.out.println("║ 14. ✿ Combo Doble o Nada Familiar Hut Cheese ....... $ 92.90   ║");
+System.out.println("╠════════════════════•✧✧•════════════════════════════════════════╣");
+System.out.println("║          ♡ Gracias por preferir nuestros combos ♡              ║");
+System.out.println("╚═🌸══════════════════════════════════════════════════════════🌸═══╝");
 
         System.out.print("Seleccione una opción: ");
         int opcion = sc.nextInt();
