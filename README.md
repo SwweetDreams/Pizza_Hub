@@ -3679,6 +3679,7 @@ public class Pizza_Hut_com {
         facturaContenido.append("             ██╔═══╝ ██║██╔══██║██╔══██║██║██║     ██║   ██║\n");
         facturaContenido.append("             ██║     ██║██║  ██║██║  ██║██║███████╗╚██████╔╝\n");
         facturaContenido.append("             ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝ \n");
+        facturaContenido.append("A nombre de: "+USUARIO_PREDETERMINADO+("\n"));
         facturaContenido.append("Fecha: ").append(fechitaUgU.format(fecha)).append("\n");
         facturaContenido.append("Detalles del pedido:\n");
 
