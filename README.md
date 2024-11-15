@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -5,14 +6,19 @@ import java.util.Map;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.FileWriter;
 
-
-public class Pizza_hub {
+public class Pizza_Hut_com {
     public static ArrayList<Producto> carrito = new ArrayList<>();
+
     public static Scanner sc = new Scanner(System.in);
+
     public static double total = 0;
+
     public static final double IGV = 0.18;
+
     public static Map<String, String> cuentas = new HashMap<>();
+
     public static final String USUARIO_PREDETERMINADO = "ben";
     public static final String CONTRASENA_PREDETERMINADA = "23";
 
@@ -76,6 +82,7 @@ public class Pizza_hub {
                 case 8:
                     medotoPago();
                     continuarPedido = false;
+
                     break;
                 case 9:
                     mostrarCarrito();
@@ -123,8 +130,7 @@ public class Pizza_hub {
 
 
         System.out.println("""
-                               
-                                                                            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                                              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                                                                             ⠀⠀⠀⢀⡀⠀⠀⠀⠀⠐⠻⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                                                                             ⠀⠀⠀⠀⠁⠈⠑⠄⠀⠀⠀⢀⣀⣤⣤⣤⣤⣀⣀⣀⠀⠀⠀⠀⠀⠙⠓⠀⠀⠀⠀⠀⠀⠀⠀⢀
                              ██████╗ ██╗██╗  ██╗ █████╗ ██╗██╗     ██╗   ██╗⠀⠀⠀⠀⢠⣶⡆⠀⠀⠀⠀⢿⣉⠺⣿⣿⣿⣿⣿⣿⣷⡆⠀⠀⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈
@@ -136,7 +142,7 @@ public class Pizza_hub {
                                                                             ⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⡅⢼⣿⣿⣿⣼⢳⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                                                                             ⠀⠀⠀⠀⠀⠀⠀⠈⠻⠿⠻⠇⠸⠿⠛⠛⠛⠋⠁⠀⠀⡴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                                                                             ⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠠…
-                                
+                
                 """);
         System.out.println("                                  P I Z Z A                 H   U   D                              ");
     }
@@ -207,7 +213,6 @@ public class Pizza_hub {
             System.out.println("\n0. Volver al menú principal - Si deseas ver otras opciones");
             System.out.println("----------------------------------------------------------------------------------------------------------");
             System.out.print("¿Cuál te gustaría probar? (Ingresa el número): ");
-
 
 
             int opcion = sc.nextInt();
@@ -1948,36 +1953,36 @@ public class Pizza_hub {
         switch (antojitos) {
             case 1:
                 System.out.println("""
-                                                         ¿Algunos Antojitos Salados?
-                                                            Tenemos estas opciones
-                                
-                                Opcion 1: (PALITOS A LA SILICIANA)        | Pack de 6 y 10 palitos a la siliciana acompañados |
-                                Precio:   6 UNIDADES $9.90                |    acompañados con nuestra salsa mediterranea     |
-                                          10 UNIDADES $11.90
-                                
-                                Opcion 2: (PAN AL AJO)                    |                ¡SUPER CROCANTES!                  |
-                                Precio:   4 UNIDADES $10.90               |  4 panes al ajo con el toque perfecto de orégano. |
-                                
-                                Opcion 3: (PAN AL AJO ESPECIAL)           |            ¡PARA HACER TU DÍA ESPECIAL!           |
-                                Precio:   4 UNIDADES $13.90               |         4 panes al ajo con queso y orégano.       |
-                                
-                                Opcion 4: (ROLLS DE JAMON & QUESO)        |               ¡RELLENOS DE SABOR!                 |
-                                Precio:   6 UNIDADES $15.90               |         6 rolls rllenos de jamon y queso.         |
-                                
-                                Opcion 5: (ALITAS)
-                                Precio:   6 UNIDADES, SALSA HUT $15.90    |               ¡EL COMPLEMENTO PERFECTO!           |
-                                          6 UNIDADES, SALSA BBQ $15.90    | Pack de 6 y 9 alitas bañadas en tu salsa favorita.|
-                                          6 UNIDADES, SIN SALSA $15.90
-                                          9 UNIDADES, SALSA HUT $20.90
-                                          9 UNIDADES, SALSA BBQ $20.90
-                                          9 UNIDADES, SIN SALSA $20.90
-                                
-                                
-                                Opcion 6: (HUT BREAD)                     |                  ¡FULL QUESO!                     |
-                                Precio: 8 UNIDADES DE QUESO $13.90        |   8 Palitos rellenos de queso y disponibles en    |
-                                        8 UNIDADES HAWAIANO $16.90        |                   3 sabores                       |
-                                
-                                Opcion 7: No""");
+                                                 ¿Algunos Antojitos Salados?
+                                                    Tenemos estas opciones
+                        
+                        Opcion 1: (PALITOS A LA SILICIANA)        | Pack de 6 y 10 palitos a la siliciana acompañados |
+                        Precio:   6 UNIDADES $9.90                |    acompañados con nuestra salsa mediterranea     |
+                                  10 UNIDADES $11.90
+                        
+                        Opcion 2: (PAN AL AJO)                    |                ¡SUPER CROCANTES!                  |
+                        Precio:   4 UNIDADES $10.90               |  4 panes al ajo con el toque perfecto de orégano. |
+                        
+                        Opcion 3: (PAN AL AJO ESPECIAL)           |            ¡PARA HACER TU DÍA ESPECIAL!           |
+                        Precio:   4 UNIDADES $13.90               |         4 panes al ajo con queso y orégano.       |
+                        
+                        Opcion 4: (ROLLS DE JAMON & QUESO)        |               ¡RELLENOS DE SABOR!                 |
+                        Precio:   6 UNIDADES $15.90               |         6 rolls rllenos de jamon y queso.         |
+                        
+                        Opcion 5: (ALITAS)
+                        Precio:   6 UNIDADES, SALSA HUT $15.90    |               ¡EL COMPLEMENTO PERFECTO!           |
+                                  6 UNIDADES, SALSA BBQ $15.90    | Pack de 6 y 9 alitas bañadas en tu salsa favorita.|
+                                  6 UNIDADES, SIN SALSA $15.90
+                                  9 UNIDADES, SALSA HUT $20.90
+                                  9 UNIDADES, SALSA BBQ $20.90
+                                  9 UNIDADES, SIN SALSA $20.90
+                        
+                        
+                        Opcion 6: (HUT BREAD)                     |                  ¡FULL QUESO!                     |
+                        Precio: 8 UNIDADES DE QUESO $13.90        |   8 Palitos rellenos de queso y disponibles en    |
+                                8 UNIDADES HAWAIANO $16.90        |                   3 sabores                       |
+                        
+                        Opcion 7: No""");
                 int salados = sc.nextInt();
                 switch (salados) {
                     case 1:
@@ -1993,7 +1998,7 @@ public class Pizza_hub {
                                 double precioTotal = 9.90 * cantidadPalitos6;
                                 double subtotal = precioTotal / (1 + IGV);
                                 double montoIGV = precioTotal - subtotal;
-                                tipoPizza ="PALITOS A LA SILICIANA - 6 Unidades";
+                                tipoPizza = "PALITOS A LA SILICIANA - 6 Unidades";
                                 carrito.add(new Producto(tipoPizza, precioTotal, cantidadPalitos6));
                                 System.out.println("Añadido al carrito: " + cantidadPalitos6 + " x " + tipoPizza + " = " + precioTotal);
 
@@ -2008,7 +2013,7 @@ public class Pizza_hub {
                                 double precioTotal10 = 11.90 * cantidadPalitos10;
                                 double subtotal10 = precioTotal10 / (1 + IGV);
                                 double montoIGV10 = precioTotal10 - subtotal10;
-                                tipoPizza ="PALITOS A LA SILICIANA - 10 Unidades";
+                                tipoPizza = "PALITOS A LA SILICIANA - 10 Unidades";
                                 carrito.add(new Producto(tipoPizza, precioTotal10, cantidadPalitos10));
                                 System.out.println("Añadido al carrito: " + cantidadPalitos10 + " x " + tipoPizza + " = " + precioTotal10);
 
@@ -2027,7 +2032,7 @@ public class Pizza_hub {
                         double precioTotal = 10.90 * cantidadPan;
                         double subtotal = precioTotal / (1 + IGV);
                         double montoIGV = precioTotal - subtotal;
-                        tipoPizza ="PAN AL AJO - 4 Unidades";
+                        tipoPizza = "PAN AL AJO - 4 Unidades";
                         carrito.add(new Producto(tipoPizza, precioTotal, cantidadPan));
                         System.out.println("Añadido al carrito: " + cantidadPan + " x " + tipoPizza + " = " + precioTotal);
 
@@ -2042,7 +2047,7 @@ public class Pizza_hub {
                         double precioTotalE = 13.90 * cantidadE;
                         double subtotalE = precioTotalE / (1 + IGV);
                         double montoIGVE = precioTotalE - subtotalE;
-                        tipoPizza ="PAN AL AJO ESPECIAL - 4 Unidades";
+                        tipoPizza = "PAN AL AJO ESPECIAL - 4 Unidades";
                         carrito.add(new Producto(tipoPizza, precioTotalE, cantidadE));
                         System.out.println("Añadido al carrito: " + cantidadE + " x " + tipoPizza + " = " + precioTotalE);
 
@@ -2057,7 +2062,7 @@ public class Pizza_hub {
                         double precioTotalR = 15.90 * cantidadR;
                         double subtotalR = precioTotalR / (1 + IGV);
                         double montoIGVR = precioTotalR - subtotalR;
-                        tipoPizza ="ROLLS DE JAMON & QUESO - 6 unidades";
+                        tipoPizza = "ROLLS DE JAMON & QUESO - 6 unidades";
                         carrito.add(new Producto(tipoPizza, precioTotalR, cantidadR));
                         System.out.println("Añadido al carrito: " + cantidadR + " x " + tipoPizza + " = " + precioTotalR);
 
@@ -2083,7 +2088,7 @@ public class Pizza_hub {
                                 double precioTotalhut = 15.90 * cantidadAlitasHUT;
                                 double subtotalhut = precioTotalhut / (1 + IGV);
                                 double montoIGVhut = precioTotalhut - subtotalhut;
-                                tipoPizza ="ALITAS CON SALSA HUT - 6 Unidades";
+                                tipoPizza = "ALITAS CON SALSA HUT - 6 Unidades";
                                 carrito.add(new Producto(tipoPizza, precioTotalhut, cantidadAlitasHUT));
                                 System.out.println("Añadido al carrito: " + cantidadAlitasHUT + " x " + tipoPizza + " = " + precioTotalhut);
 
@@ -2098,7 +2103,7 @@ public class Pizza_hub {
                                 double precioTotalbbq = 15.90 * cantidadAlitasBBQ;
                                 double subtotalbbq = precioTotalbbq / (1 + IGV);
                                 double montoIGVBBQ = precioTotalbbq - subtotalbbq;
-                                tipoPizza ="ALITAS CON SALSA BBQ - 6 Unidades";
+                                tipoPizza = "ALITAS CON SALSA BBQ - 6 Unidades";
                                 carrito.add(new Producto(tipoPizza, precioTotalbbq, cantidadAlitasBBQ));
                                 System.out.println("Añadido al carrito: " + cantidadAlitasBBQ + " x " + tipoPizza + " = " + precioTotalbbq);
 
@@ -2113,7 +2118,7 @@ public class Pizza_hub {
                                 double precioTotalsin = 15.90 * cantidadAlitasSIN;
                                 double subtotalsin = precioTotalsin / (1 + IGV);
                                 double montoIGVSIN = precioTotalsin - subtotalsin;
-                                tipoPizza ="ALITAS SIN SALSA - 6 Unidades";
+                                tipoPizza = "ALITAS SIN SALSA - 6 Unidades";
                                 carrito.add(new Producto(tipoPizza, precioTotalsin, cantidadAlitasSIN));
                                 System.out.println("Añadido al carrito: " + cantidadAlitasSIN + " x " + tipoPizza + " = " + precioTotalsin);
 
@@ -2128,7 +2133,7 @@ public class Pizza_hub {
                                 double precioTotalHUT = 20.90 * cantidadAlitas9HUT;
                                 double subtotalHUT = precioTotalHUT / (1 + IGV);
                                 double montoIGVHut = precioTotalHUT - subtotalHUT;
-                                tipoPizza ="ALITAS CON SALSA HUT- 9 Unidades";
+                                tipoPizza = "ALITAS CON SALSA HUT- 9 Unidades";
                                 carrito.add(new Producto(tipoPizza, precioTotalHUT, cantidadAlitas9HUT));
                                 System.out.println("Añadido al carrito: " + cantidadAlitas9HUT + " x " + tipoPizza + " = " + precioTotalHUT);
 
@@ -2143,7 +2148,7 @@ public class Pizza_hub {
                                 double precioTotalBBQ9 = 20.90 * cantidadAlitasBBQ9;
                                 double subtotalBBQ = precioTotalBBQ9 / (1 + IGV);
                                 double montoIGVBBQ9 = precioTotalBBQ9 - subtotalBBQ;
-                                tipoPizza ="ALITAS CON SALSA BBQ- 9 Unidades";
+                                tipoPizza = "ALITAS CON SALSA BBQ- 9 Unidades";
                                 carrito.add(new Producto(tipoPizza, precioTotalBBQ9, cantidadAlitasBBQ9));
                                 System.out.println("Añadido al carrito: " + cantidadAlitasBBQ9 + " x " + tipoPizza + " = " + precioTotalBBQ9);
 
@@ -2158,7 +2163,7 @@ public class Pizza_hub {
                                 double precioTotalSIN = 20.90 * cantidadAlitas9SIN;
                                 double subtotalSIN = precioTotalSIN / (1 + IGV);
                                 double montoIGV9USIN = precioTotalSIN - subtotalSIN;
-                                tipoPizza ="ALITAS SIN SALSA - 9 Unidades";
+                                tipoPizza = "ALITAS SIN SALSA - 9 Unidades";
                                 carrito.add(new Producto(tipoPizza, precioTotalSIN, cantidadAlitas9SIN));
                                 System.out.println("Añadido al carrito: " + cantidadAlitas9SIN + " x " + tipoPizza + " = " + precioTotalSIN);
 
@@ -2184,7 +2189,7 @@ public class Pizza_hub {
                                 double precioTotalQ = 16.90 * cantidadQ;
                                 double subtotalQ = precioTotalQ / (1 + IGV);
                                 double montoIGVQ = precioTotalQ - subtotalQ;
-                                tipoPizza ="HUT BREAD DE QUESO- 8 Unidades";
+                                tipoPizza = "HUT BREAD DE QUESO- 8 Unidades";
                                 carrito.add(new Producto(tipoPizza, precioTotalQ, cantidadQ));
                                 System.out.println("Añadido al carrito: " + cantidadQ + " x " + tipoPizza + " = " + precioTotalQ);
 
@@ -2199,7 +2204,7 @@ public class Pizza_hub {
                                 double precioTotalH = 16.90 * cantidadH;
                                 double subtotalH = precioTotalH / (1 + IGV);
                                 double montoIGVH = precioTotalH - subtotalH;
-                                tipoPizza ="HUT BREAD HAWAIANO- 8 Unidades";
+                                tipoPizza = "HUT BREAD HAWAIANO- 8 Unidades";
                                 carrito.add(new Producto(tipoPizza, precioTotalH, cantidadH));
                                 System.out.println("Añadido al carrito: " + cantidadH + " x " + tipoPizza + " = " + precioTotalH);
 
@@ -2214,27 +2219,27 @@ public class Pizza_hub {
                 }
             case 2:
                 System.out.println(""" 
-                                                      Ahh, ¿unos Antojitos Dulces?
-                                                        Tenemos estas opciones
-                                
-                                Opcion 1: (HUT CHURROS)          |       4 Hut Churros rellenos de manjar, decorados con     |
-                                Precio:   4 UNIDADES $5.90       |                azúcar impalpable y canela.                |
-                                
-                                Opcion 2: (ROLLS DE MANJAR)      |               ¡MÁS MANJAR PARA DISFRUTAR!                 |
-                                Precio:   6 UNIDADES $6.90       |              6 Rolls rellenos de manjar blanco.           |
-                                
-                                Opcion 3: (TARTA DE MANZANA)     |                          ¡POSTRE!                         |
-                                Precio:   1 UNIDADES $5.90       |           Tarta de manzana hojaldre horneada,             |
-                                                                 |           rellena de compota de manzana y canela.         |
-                                
-                                Opcion 4: (VOLCAN DE LIMON)      | Suave Bizcochuelo relleno con exquisita crema sabor limón.|
-                                Precio:   1 UNIDADES $10.90
-                                
-                                Opcion 5: (VOLCAN DE CHOCOLATE)  |    Delicioso keke sabor a chocolate con relleno líquido.  |
-                                Precio:   1 UNIDADES $10.90
-                                
-                                Opcion 6: Volver
-                                """);
+                                              Ahh, ¿unos Antojitos Dulces?
+                                                Tenemos estas opciones
+                        
+                        Opcion 1: (HUT CHURROS)          |       4 Hut Churros rellenos de manjar, decorados con     |
+                        Precio:   4 UNIDADES $5.90       |                azúcar impalpable y canela.                |
+                        
+                        Opcion 2: (ROLLS DE MANJAR)      |               ¡MÁS MANJAR PARA DISFRUTAR!                 |
+                        Precio:   6 UNIDADES $6.90       |              6 Rolls rellenos de manjar blanco.           |
+                        
+                        Opcion 3: (TARTA DE MANZANA)     |                          ¡POSTRE!                         |
+                        Precio:   1 UNIDADES $5.90       |           Tarta de manzana hojaldre horneada,             |
+                                                         |           rellena de compota de manzana y canela.         |
+                        
+                        Opcion 4: (VOLCAN DE LIMON)      | Suave Bizcochuelo relleno con exquisita crema sabor limón.|
+                        Precio:   1 UNIDADES $10.90
+                        
+                        Opcion 5: (VOLCAN DE CHOCOLATE)  |    Delicioso keke sabor a chocolate con relleno líquido.  |
+                        Precio:   1 UNIDADES $10.90
+                        
+                        Opcion 6: Volver
+                        """);
                 int dulces = sc.nextInt();
                 switch (dulces) {
                     case 1:
@@ -2243,7 +2248,7 @@ public class Pizza_hub {
                         double precioTotal = 5.90 * cantidadChurros;
                         double subtotal = precioTotal / (1 + IGV);
                         double montoIGV = precioTotal - subtotal;
-                        tipoPizza ="HUT CHURROS - 4 Unidades";
+                        tipoPizza = "HUT CHURROS - 4 Unidades";
                         carrito.add(new Producto(tipoPizza, precioTotal, cantidadChurros));
                         System.out.println("Añadido al carrito: " + cantidadChurros + " x " + tipoPizza + " = " + precioTotal);
 
@@ -2257,7 +2262,7 @@ public class Pizza_hub {
                         double precioTotalM = 6.90 * cantidadM;
                         double subtotalM = precioTotalM / (1 + IGV);
                         double montoIGVR = precioTotalM - subtotalM;
-                        tipoPizza ="ROLLS DE MANJAR - 6 Unidades";
+                        tipoPizza = "ROLLS DE MANJAR - 6 Unidades";
                         carrito.add(new Producto(tipoPizza, precioTotalM, cantidadM));
                         System.out.println("Añadido al carrito: " + cantidadM + " x " + tipoPizza + " = " + precioTotalM);
 
@@ -2271,7 +2276,7 @@ public class Pizza_hub {
                         double precioTotalT = 5.90 * cantidadT;
                         double subtotalT = precioTotalT / (1 + IGV);
                         double montoIGVT = precioTotalT - subtotalT;
-                        tipoPizza ="TARTA DE MANZANA - 1 Unidad";
+                        tipoPizza = "TARTA DE MANZANA - 1 Unidad";
                         carrito.add(new Producto(tipoPizza, precioTotalT, cantidadT));
                         System.out.println("Añadido al carrito: " + cantidadT + " x " + tipoPizza + " = " + precioTotalT);
 
@@ -2285,7 +2290,7 @@ public class Pizza_hub {
                         double precioTotalL = 10.90 * cantidadL;
                         double subtotalL = precioTotalL / (1 + IGV);
                         double montoIGVL = precioTotalL - subtotalL;
-                        tipoPizza ="VOLCAN DE LIMON - 1 Unidad";
+                        tipoPizza = "VOLCAN DE LIMON - 1 Unidad";
                         carrito.add(new Producto(tipoPizza, precioTotalL, cantidadL));
                         System.out.println("Añadido al carrito: " + cantidadL + " x " + tipoPizza + " = " + precioTotalL);
 
@@ -2299,7 +2304,7 @@ public class Pizza_hub {
                         double precioTotalC = 10.90 * cantidadC;
                         double subtotalC = precioTotalC / (1 + IGV);
                         double montoIGVC = precioTotalC - subtotalC;
-                        tipoPizza ="VOLCAN DE CHOCOLATE - 1 Unidad";
+                        tipoPizza = "VOLCAN DE CHOCOLATE - 1 Unidad";
                         carrito.add(new Producto(tipoPizza, precioTotalC, cantidadC));
                         System.out.println("Añadido al carrito: " + cantidadC + " x " + tipoPizza + " = " + precioTotalC);
 
@@ -2312,24 +2317,24 @@ public class Pizza_hub {
                 }
             case 3:
                 System.out.println("""
-                                                    ¿Unas Salsas?
-                                Opcion 1: (MAYOHUT 1OZ)               |                   ¡El match perfecto!                      |
-                                Precio:   $1.50                       |        1 onza de salsa a base de moztaza y mayonesa.       |
-                                
-                                Opcion 2: (SALSA HONEY 1OZ)           |              ¡Combina con lo que quieras!                  |
-                                Precio:   $1.50                       |        1 onza de salsa BBQ con toque de sabor a miel.      |
-                                
-                                Opcion 3: (SALSA CHILI THAI 1OZ)      |                   ¡Lo mejor de dos mundos!                 |
-                                Precio:   $1.50                       |              1 onza de salsa dulce y picante.              |
-                                
-                                Opcion 4: (SALSA MEDITERRANEA 1OZ)    |                   ¡Para tus antojos!                       |
-                                Precio:   $1.50                       |1 onza de salsa de tomate, finas hierbas y un toque picante.|
-                                
-                                Opcion 5: (SALSA AJI DE LA CASA 1OZ)  |                      ¡El toque perfecto!                   |
-                                Precio:   $1.50                       |  1 onza aji hecho en casa para que dipees tu Hut favorita. |
-                                
-                                Opcion 6: Volver
-                                """);
+                                            ¿Unas Salsas?
+                        Opcion 1: (MAYOHUT 1OZ)               |                   ¡El match perfecto!                      |
+                        Precio:   $1.50                       |        1 onza de salsa a base de moztaza y mayonesa.       |
+                        
+                        Opcion 2: (SALSA HONEY 1OZ)           |              ¡Combina con lo que quieras!                  |
+                        Precio:   $1.50                       |        1 onza de salsa BBQ con toque de sabor a miel.      |
+                        
+                        Opcion 3: (SALSA CHILI THAI 1OZ)      |                   ¡Lo mejor de dos mundos!                 |
+                        Precio:   $1.50                       |              1 onza de salsa dulce y picante.              |
+                        
+                        Opcion 4: (SALSA MEDITERRANEA 1OZ)    |                   ¡Para tus antojos!                       |
+                        Precio:   $1.50                       |1 onza de salsa de tomate, finas hierbas y un toque picante.|
+                        
+                        Opcion 5: (SALSA AJI DE LA CASA 1OZ)  |                      ¡El toque perfecto!                   |
+                        Precio:   $1.50                       |  1 onza aji hecho en casa para que dipees tu Hut favorita. |
+                        
+                        Opcion 6: Volver
+                        """);
                 int salsas = sc.nextInt();
                 switch (salsas) {
                     case 1:
@@ -2338,7 +2343,7 @@ public class Pizza_hub {
                         double precioTotal = 1.50 * cantidadMayohut;
                         double subtotal = precioTotal / (1 + IGV);
                         double montoIGV = precioTotal - subtotal;
-                        tipoPizza ="MAYOHUT 1OZ";
+                        tipoPizza = "MAYOHUT 1OZ";
                         carrito.add(new Producto(tipoPizza, precioTotal, cantidadMayohut));
                         System.out.println("Añadido al carrito: " + cantidadMayohut + " x " + tipoPizza + " = " + precioTotal);
 
@@ -2352,7 +2357,7 @@ public class Pizza_hub {
                         double precioTotalSH = 1.50 * cantidadSalsaHoney;
                         double subtotalSH = precioTotalSH / (1 + IGV);
                         double montoIGVSH = precioTotalSH - subtotalSH;
-                        tipoPizza ="SALSA HONEY 1OZ";
+                        tipoPizza = "SALSA HONEY 1OZ";
                         carrito.add(new Producto(tipoPizza, precioTotalSH, cantidadSalsaHoney));
                         System.out.println("Añadido al carrito: " + cantidadSalsaHoney + " x " + tipoPizza + " = " + precioTotalSH);
 
@@ -2366,7 +2371,7 @@ public class Pizza_hub {
                         double precioTotalSCHT = 1.50 * cantidadSalsaChiliThai;
                         double subtotalSCHT = precioTotalSCHT / (1 + IGV);
                         double montoIGVSCHT = precioTotalSCHT - subtotalSCHT;
-                        tipoPizza ="SALSA CHILI THAI 1OZ";
+                        tipoPizza = "SALSA CHILI THAI 1OZ";
                         carrito.add(new Producto(tipoPizza, precioTotalSCHT, cantidadSalsaChiliThai));
                         System.out.println("Añadido al carrito: " + cantidadSalsaChiliThai + " x " + tipoPizza + " = " + precioTotalSCHT);
 
@@ -2380,7 +2385,7 @@ public class Pizza_hub {
                         double precioTotalSM = 1.50 * cantidadChurros;
                         double subtotalSM = precioTotalSM / (1 + IGV);
                         double montoIGVSM = precioTotalSM - subtotalSM;
-                        tipoPizza ="SALSA MEDITERRANEA 1OZ";
+                        tipoPizza = "SALSA MEDITERRANEA 1OZ";
                         carrito.add(new Producto(tipoPizza, precioTotalSM, cantidadChurros));
                         System.out.println("Añadido al carrito: " + cantidadChurros + " x " + tipoPizza + " = " + precioTotalSM);
 
@@ -2394,7 +2399,7 @@ public class Pizza_hub {
                         double precioTotalSA = 1.50 * cantidadChurrosSA;
                         double subtotalSA = precioTotalSA / (1 + IGV);
                         double montoIGVSA = precioTotalSA - subtotalSA;
-                        tipoPizza ="SALSA AJI DE LA CASA 1OZ";
+                        tipoPizza = "SALSA AJI DE LA CASA 1OZ";
                         carrito.add(new Producto(tipoPizza, precioTotalSA, cantidadChurrosSA));
                         System.out.println("Añadido al carrito: " + cantidadChurrosSA + " x " + tipoPizza + " = " + precioTotalSA);
 
@@ -2412,26 +2417,26 @@ public class Pizza_hub {
     public static void procesarBebidas() {
         System.out.println("Seleccione sus bebidas");
         System.out.println("""
-                                      BEBIDAS
-                        Opcion 1:  (COCA COLA SIN AZUCAR)   | Para recojo de tienda se entregarán vasos |
-                        Precio:   - PERSONAL ($4.90)        |        de gaseosa según apliquen          |
-                                  - 1 LITRO  ($8.90)
-                        
-                        Opcion 2: (INCA KOLA SIN AZUCAR)    | Para recojo de tienda se entregarán vasos |
-                        Precio:   - PERSONAL  ($4.90)       |       de gaseosa según apliquen           |
-                                  -1 LITRO   ($8.90)
-                        
-                        Opcion 3: (SPRITE PERSONAL)         | Para recojo de tienda se entregara 1 vaso |
-                        Precio:   ($4.90)                   |       de gaseosa según apliquen           |
-                        
-                        Opcion 4: (FANTA PERSONAL)          | Para recojo de tienda se entregara 1 vaso |
-                        Precio:   ($4.90)                   |       de gaseosa según apliquen           |
-                        
-                        Opcion 5: (AGUA SAN LUIS SIN GAS)   |         Agua San Luis sin gas|            |
-                        Precio:   ($4.90)
-                        
-                        Opcion 6: Volver
-                        """);
+                              BEBIDAS
+                Opcion 1:  (COCA COLA SIN AZUCAR)   | Para recojo de tienda se entregarán vasos |
+                Precio:   - PERSONAL ($4.90)        |        de gaseosa según apliquen          |
+                          - 1 LITRO  ($8.90)
+                
+                Opcion 2: (INCA KOLA SIN AZUCAR)    | Para recojo de tienda se entregarán vasos |
+                Precio:   - PERSONAL  ($4.90)       |       de gaseosa según apliquen           |
+                          -1 LITRO   ($8.90)
+                
+                Opcion 3: (SPRITE PERSONAL)         | Para recojo de tienda se entregara 1 vaso |
+                Precio:   ($4.90)                   |       de gaseosa según apliquen           |
+                
+                Opcion 4: (FANTA PERSONAL)          | Para recojo de tienda se entregara 1 vaso |
+                Precio:   ($4.90)                   |       de gaseosa según apliquen           |
+                
+                Opcion 5: (AGUA SAN LUIS SIN GAS)   |         Agua San Luis sin gas|            |
+                Precio:   ($4.90)
+                
+                Opcion 6: Volver
+                """);
         int bebidas = sc.nextInt();
         switch (bebidas) {
             case 1:
@@ -2561,25 +2566,25 @@ public class Pizza_hub {
     public static void procesarParaMi() {
         System.out.println("Seleccione su combo personal");
         System.out.println("""
-                                                PARA MI
-                        Opcion 1: (MY BOX CLASSICO)        | 1 Pizza Personal                                 |
-                        Precio: $14.90                     | 3 Palitos a la Siliciana                         |
-                                                           | 1 Bebida Personal                                |
-                        
-                        Opcion 2: (MY BOX SUPREMO)         | Si tienes Hambre esta caja es tuya:              |
-                        Precio: $19.90                     | 1 Pizza Personal                                 |
-                                                           | 3 Alitas BBQ                                     |
-                                                           | 1 Bebida Personal                                |
-                        
-                        Opcion 3: (DUO LASAGNA BOLOGNESA)  | ¡Tu favorita de Siempre!                         |
-                        Precio: $24.90                     | 1 Lasagna Bolognesa                              |
-                                                           | 1 Bebida Personal                                |
-                        
-                        Opcion 4: (MIERCOLES DE FALABELLA) | 1 Pizza Mediana (Americana, Pepperoni o Suprema) |
-                        Precio: $12.90                     | 1 Bebida Regular                                 |
-                        
-                        Opcion 5: Volver
-                        """);
+                                        PARA MI
+                Opcion 1: (MY BOX CLASSICO)        | 1 Pizza Personal                                 |
+                Precio: $14.90                     | 3 Palitos a la Siliciana                         |
+                                                   | 1 Bebida Personal                                |
+                
+                Opcion 2: (MY BOX SUPREMO)         | Si tienes Hambre esta caja es tuya:              |
+                Precio: $19.90                     | 1 Pizza Personal                                 |
+                                                   | 3 Alitas BBQ                                     |
+                                                   | 1 Bebida Personal                                |
+                
+                Opcion 3: (DUO LASAGNA BOLOGNESA)  | ¡Tu favorita de Siempre!                         |
+                Precio: $24.90                     | 1 Lasagna Bolognesa                              |
+                                                   | 1 Bebida Personal                                |
+                
+                Opcion 4: (MIERCOLES DE FALABELLA) | 1 Pizza Mediana (Americana, Pepperoni o Suprema) |
+                Precio: $12.90                     | 1 Bebida Regular                                 |
+                
+                Opcion 5: Volver
+                """);
         int combos = sc.nextInt();
         switch (combos) {
             case 1:
@@ -2645,9 +2650,11 @@ public class Pizza_hub {
                 System.out.println("");
         }
     }
+
     public static void procesarOfertas() {
 
         int opcion;
+        String tipoPizza;
         do {
             System.out.println("---------------------------------------------------------------------------------------------------");
             System.out.println("                                   BIENVENIDO A NUESTRA CARTA");
@@ -2725,141 +2732,482 @@ public class Pizza_hub {
             System.out.print("Opcion:");
             opcion = sc.nextInt();
             switch (opcion) {
+
                 case 1:
-                    SolucionIGV(20.90);
+                    int cantidad1;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad1 = sc.nextInt();
+                        if (cantidad1 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad1 < 0);
+
+                    double precioTotal1 = 49.90 * cantidad1;
+                    double subtotal1 = precioTotal1 / (1 + IGV);
+                    double montoIGV1 = precioTotal1 - subtotal1;
+                    System.out.printf("Subtotal: %.2f%n", subtotal1);
+                    System.out.printf("IGV: %.2f%n", montoIGV1);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal1);
                     System.out.println("----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                    2X1 PIZZAS MEDIANAS");
 
                     System.out.println("----------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "2X1 PIZZAS MEDIANAS";
+                    carrito.add(new Producto(tipoPizza, precioTotal1, cantidad1));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad1 + " x " + tipoPizza + " = " + precioTotal1);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
+
                     break;
                 case 2:
-                    SolucionIGV(21.90);
+                    int cantidad2;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad2 = sc.nextInt();
+                        if (cantidad2 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad2 < 0);
+
+                    double precioTotal2 = 49.90 * cantidad2;
+                    double subtotal2 = precioTotal2 / (1 + IGV);
+                    double montoIGV2 = precioTotal2 - subtotal2;
+                    System.out.printf("Subtotal: %.2f%n", subtotal2);
+                    System.out.printf("IGV: %.2f%n", montoIGV2);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal2);
                     System.out.println("----------------------------------------------------------------------------------------------------------");
                     System.out.println("                               USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                       COMBO MEDIANO");
-                    System.out.println("Se le añadio a asu carrito");
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "COMBO MEDIANO";
+                    carrito.add(new Producto(tipoPizza, precioTotal2, cantidad2));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad2 + " x " + tipoPizza + " = " + precioTotal2);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 3:
-                    SolucionIGV(19.90);
+                    int cantidad3;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad3 = sc.nextInt();
+                        if (cantidad3 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad3 < 0);
+
+                    double precioTotal = 49.90 * cantidad3;
+                    double subtotal = precioTotal / (1 + IGV);
+                    double montoIGV = precioTotal - subtotal;
+                    System.out.printf("Subtotal: %.2f%n", subtotal);
+                    System.out.printf("IGV: %.2f%n", montoIGV);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal);
                     System.out.println("----------------------------------------------------------------------------------------------------------");
                     System.out.println("                             USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                         LA FIJA");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "LA FIJA";
+                    carrito.add(new Producto(tipoPizza, precioTotal, cantidad3));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad3 + " x " + tipoPizza + " = " + precioTotal);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 4:
-                    SolucionIGV(39.90);
+                    int cantidad4;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad4 = sc.nextInt();
+                        if (cantidad4 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad4 < 0);
+
+                    double precioTotal4 = 49.90 * cantidad4;
+                    double subtotal4 = precioTotal4 / (1 + IGV);
+                    double montoIGV4 = precioTotal4 - subtotal4;
+                    System.out.printf("Subtotal: %.2f%n", subtotal4);
+                    System.out.printf("IGV: %.2f%n", montoIGV4);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal4);
                     System.out.println("----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                      BANQUETE GRANDE");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("------------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "BANQUETE GRANDE";
+                    carrito.add(new Producto(tipoPizza, precioTotal4, cantidad4));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad4 + " x " + tipoPizza + " = " + precioTotal4);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 5:
-                    SolucionIGV(49.90);
+                    int cantidad5;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad5 = sc.nextInt();
+                        if (cantidad5 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad5 < 0);
+
+                    double precioTotal5 = 49.90 * cantidad5;
+                    double subtotal5 = precioTotal5 / (1 + IGV);
+                    double montoIGV5 = precioTotal5 - subtotal5;
+                    System.out.printf("Subtotal: %.2f%n", subtotal5);
+                    System.out.printf("IGV: %.2f%n", montoIGV5);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal5);
                     System.out.println("----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                     BANQUETE FAMILIAR ");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "BANQUETE FAMILIAR";
+                    carrito.add(new Producto(tipoPizza, precioTotal5, cantidad5));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad5 + " x " + tipoPizza + " = " + precioTotal5);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 6:
-                    SolucionIGV(24.90);
+                    int cantidad6;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad6 = sc.nextInt();
+                        if (cantidad6 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad6 < 0);
+
+                    double precioTotal6 = 49.90 * cantidad6;
+                    double subtotal6 = precioTotal6 / (1 + IGV);
+                    double montoIGV6 = precioTotal6 - subtotal6;
+                    System.out.printf("Subtotal: %.2f%n", subtotal6);
+                    System.out.printf("IGV: %.2f%n", montoIGV6);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal6);
                     System.out.println("----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                   COMBO MEDIANO 4 EN 1");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "COMBO MEDIANO 4 EN 1";
+                    carrito.add(new Producto(tipoPizza, precioTotal6, cantidad6));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad6 + " x " + tipoPizza + " = " + precioTotal6);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 7:
-                    SolucionIGV(34.90);
+                    int cantidad7;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad7 = sc.nextInt();
+                        if (cantidad7 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad7 < 0);
+
+                    double precioTotal7 = 49.90 * cantidad7;
+                    double subtotal7 = precioTotal7 / (1 + IGV);
+                    double montoIGV7 = precioTotal7 - subtotal7;
+                    System.out.printf("Subtotal: %.2f%n", subtotal7);
+                    System.out.printf("IGV: %.2f%n", montoIGV7);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal7);
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                    COMBO GRANDE 4 EN 1");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "COMBO GRANDE 4 EN 1";
+                    carrito.add(new Producto(tipoPizza, precioTotal7, cantidad7));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad7 + " x " + tipoPizza + " = " + precioTotal7);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 8:
-                    SolucionIGV(44.90);
+                    int cantidad8;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad8 = sc.nextInt();
+                        if (cantidad8 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad8 < 0);
+
+                    double precioTotal8 = 49.90 * cantidad8;
+                    double subtotal8 = precioTotal8 / (1 + IGV);
+                    double montoIGV8 = precioTotal8 - subtotal8;
+                    System.out.printf("Subtotal: %.2f%n", subtotal8);
+                    System.out.printf("IGV: %.2f%n", montoIGV8);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal8);
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                 USTED A ADQUIRIDO EL PRODUCTO/");
                     System.out.println("                                    COMBO FAMILIAR 4 EN 1");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "COMBO FAMILIAR 4 EN 1";
+                    carrito.add(new Producto(tipoPizza, precioTotal8, cantidad8));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad8 + " x " + tipoPizza + " = " + precioTotal8);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 9:
-                    SolucionIGV(50.90);
+                    int cantidad9;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad9 = sc.nextInt();
+                        if (cantidad9 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad9 < 0);
+
+                    double precioTotal9 = 49.90 * cantidad9;
+                    double subtotal9 = precioTotal9 / (1 + IGV);
+                    double montoIGV9 = precioTotal9 - subtotal9;
+                    System.out.printf("Subtotal: %.2f%n", subtotal9);
+                    System.out.printf("IGV: %.2f%n", montoIGV9);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal9);
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                              COMOBO FAMILIAR HUT CHEESE 4 EN 1");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "COMOBO FAMILIAR HUT CHEESE 4 EN 1";
+                    carrito.add(new Producto(tipoPizza, precioTotal9, cantidad9));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad9 + " x " + tipoPizza + " = " + precioTotal9);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 10:
-                    SolucionIGV(24.90);
+                    int cantidad10;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad10 = sc.nextInt();
+                        if (cantidad10 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad10 < 0);
+
+                    double precioTotal10 = 49.90 * cantidad10;
+                    double subtotal10 = precioTotal10 / (1 + IGV);
+                    double montoIGV10 = precioTotal10 - subtotal10;
+                    System.out.printf("Subtotal: %.2f%n", subtotal10);
+                    System.out.printf("IGV: %.2f%n", montoIGV10);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal10);
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                   USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                       HUT COMBO MEDIANO");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "HUT COMBO MEDIANO";
+                    carrito.add(new Producto(tipoPizza, precioTotal10, cantidad10));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad10 + " x " + tipoPizza + " = " + precioTotal10);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 11:
-                    SolucionIGV(24.90);
+                    int cantidad11;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad11 = sc.nextInt();
+                        if (cantidad11 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad11 < 0);
+
+                    double precioTotal11 = 49.90 * cantidad11;
+                    double subtotal11 = precioTotal11 / (1 + IGV);
+                    double montoIGV11 = precioTotal11 - subtotal11;
+                    System.out.printf("Subtotal: %.2f%n", subtotal11);
+                    System.out.printf("IGV: %.2f%n", montoIGV11);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal11);
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                 USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                        COMBO LA FIJA");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "COMBO LA FIJA";
+                    carrito.add(new Producto(tipoPizza, precioTotal11, cantidad11));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad11 + " x " + tipoPizza + " = " + precioTotal11);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 12:
-                    SolucionIGV(36.90);
+                    int cantidad12;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad12 = sc.nextInt();
+                        if (cantidad12 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad12 < 0);
+
+                    double precioTotal12 = 49.90 * cantidad12;
+                    double subtotal12 = precioTotal12 / (1 + IGV);
+                    double montoIGV12 = precioTotal12 - subtotal12;
+                    System.out.printf("Subtotal: %.2f%n", subtotal12);
+                    System.out.printf("IGV: %.2f%n", montoIGV12);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal12);
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                  USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                       HUT CHEESE MEDIANO");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "HUT CHEESE MEDIANO";
+                    carrito.add(new Producto(tipoPizza, precioTotal12, cantidad12));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad12 + " x " + tipoPizza + " = " + precioTotal12);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 13:
-                    SolucionIGV(32.90);
+                    int cantidad13;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad13 = sc.nextInt();
+                        if (cantidad13 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad13 < 0);
+
+                    double precioTotal13 = 49.90 * cantidad13;
+                    double subtotal13 = precioTotal13 / (1 + IGV);
+                    double montoIGV13 = precioTotal13 - subtotal13;
+                    System.out.printf("Subtotal: %.2f%n", subtotal13);
+                    System.out.printf("IGV: %.2f%n", montoIGV13);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal13);
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                 USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                   PIZZA GRANDE HUT CHEESE");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "PIZZA GRANDE HUT CHEESE";
+                    carrito.add(new Producto(tipoPizza, precioTotal13, cantidad13));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad13 + " x " + tipoPizza + " = " + precioTotal13);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 14:
-                    SolucionIGV(45.90);
+                    int cantidad14;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad14 = sc.nextInt();
+                        if (cantidad14 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad14 < 0);
+
+                    double precioTotal14 = 49.90 * cantidad14;
+                    double subtotal14 = precioTotal14 / (1 + IGV);
+                    double montoIGV14 = precioTotal14 - subtotal14;
+                    System.out.printf("Subtotal: %.2f%n", subtotal14);
+                    System.out.printf("IGV: %.2f%n", montoIGV14);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal14);
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                 USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                  BANQUETE GRANDE HUT CHEESE");
-                    System.out.println("Se le añadio a asu carrito.🛒");
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "BANQUETE GRANDE HUT CHEESE";
+                    carrito.add(new Producto(tipoPizza, precioTotal14, cantidad14));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad14 + " x " + tipoPizza + " = " + precioTotal14);
                     System.out.println("------------------------------------------------------------------------------------------------------");
 
                     break;
                 case 15:
-                    SolucionIGV(49.90);
+                    int cantidad15;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad15 = sc.nextInt();
+                        if (cantidad15 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad15 < 0);
+
+                    double precioTotal15 = 49.90 * cantidad15;
+                    double subtotal15 = precioTotal15 / (1 + IGV);
+                    double montoIGV15 = precioTotal15 - subtotal15;
+                    System.out.printf("Subtotal: %.2f%n", subtotal15);
+                    System.out.printf("IGV: %.2f%n", montoIGV15);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal15);
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                    COMBO CHEESY Y BITES");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "COMBO CHEESY Y BITES";
+                    carrito.add(new Producto(tipoPizza, precioTotal15, cantidad15));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad15 + " x " + tipoPizza + " = " + precioTotal15);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 16:
-                    SolucionIGV(69.90);
+                    int cantidad16;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad16 = sc.nextInt();
+                        if (cantidad16 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad16 < 0);
+
+                    double precioTotal16 = 49.90 * cantidad16;
+                    double subtotal16 = precioTotal16 / (1 + IGV);
+                    double montoIGV16 = precioTotal16 - subtotal16;
+                    System.out.printf("Subtotal: %.2f%n", subtotal16);
+                    System.out.printf("IGV: %.2f%n", montoIGV16);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal16);
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                       COMBO PIZZA XL");
-                    System.out.println("Se le añadio a asu carrito.🛒");
                     System.out.println("------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "COMBO PIZZA XL";
+                    carrito.add(new Producto(tipoPizza, precioTotal16, cantidad16));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad16 + " x " + tipoPizza + " = " + precioTotal16);
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+
                     break;
                 case 17:
-                    SolucionIGV(112.90);
+                    int cantidad17;
+                    do {
+                        System.out.println("----------------------------------------------------------------------------------------------");
+                        System.out.println("                               INGRESE LA CANTIDAD");
+                        cantidad17 = sc.nextInt();
+                        if (cantidad17 < 0) {
+                            System.out.println("La cantidad debe ser mayor a 0");
+                        }
+                    } while (cantidad17 < 0);
+
+                    double precioTotal17 = 49.90 * cantidad17;
+                    double subtotal17 = precioTotal17 / (1 + IGV);
+                    double montoIGV17 = precioTotal17 - subtotal17;
+                    System.out.printf("Subtotal: %.2f%n", subtotal17);
+                    System.out.printf("IGV: %.2f%n", montoIGV17);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal17);
                     System.out.println("-----------------------------------------------------------------------------------------------------------");
                     System.out.println("                                   USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                    COMBO TRIPACK FAMILIAT");
-                    System.out.println("Se le añadio a asu carrito.🛒");
+                    System.out.println("------------------------------------------------------------------------------------------------------");
+                    tipoPizza = "COMBO TRIPACK FAMILIAT";
+                    carrito.add(new Producto(tipoPizza, precioTotal17, cantidad17));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+                    System.out.println("Añadido al carrito: " + cantidad17 + " x " + tipoPizza + " = " + precioTotal17);
                     System.out.println("------------------------------------------------------------------------------------------------------");
                     break;
                 default:
@@ -2894,7 +3242,6 @@ public class Pizza_hub {
         System.out.println("Subtotal: " + subtotal);
         System.out.println("IGV: " + montoIGV);
         System.out.println("Precio Total: " + precioTotal);
-
 
 
         total += precioTotal;
@@ -3078,14 +3425,15 @@ public class Pizza_hub {
                     double precioTotal = 49.90 * cantidad;
                     double subtotal = precioTotal / (1 + IGV);
                     double montoIGV = precioTotal - subtotal;
-                    System.out.println("Subtotal: " + subtotal);
-                    System.out.println("IGV: " + montoIGV);
-                    System.out.println("Precio Total: " + precioTotal);
+                    System.out.printf("Subtotal: %.2f%n", subtotal);
+                    System.out.printf("IGV: %.2f%n", montoIGV);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal);
                     System.out.println("------------------------------------------------------------------------------------------------------");
                     System.out.println("                               USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                 COMBO PILSEN GRANDE 4 EN 1");
                     tipoPizza = "COMBO PILSEN GRANDE 4 EN 1";
                     carrito.add(new Producto(tipoPizza, precioTotal, cantidad));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
                     System.out.println("Añadido al carrito: " + cantidad + " x " + tipoPizza + " = " + precioTotal);
                     System.out.println("------------------------------------------------------------------------------------------------------");
 
@@ -3107,14 +3455,16 @@ public class Pizza_hub {
                     double subtotal1 = precioTotal1 / (1 + IGV);
                     double montoIGV1 = precioTotal1 - subtotal1;
 
-                    System.out.println("Subtotal: " + subtotal1);
-                    System.out.println("IGV: " + montoIGV1);
-                    System.out.println("Precio Total: " + precioTotal1);
+                    System.out.printf("Subtotal: %.2f%n", subtotal1);
+                    System.out.printf("IGV: %.2f%n", montoIGV1);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal1);
                     System.out.println("------------------------------------------------------------------------------------------------------");
                     System.out.println("                                 USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                 COMBO PILSEN FAMILIAR 4 EN 1");
                     tipoPizza = "COMBO PILSEN FAMILIAR 4 EN 1";
                     carrito.add(new Producto(tipoPizza, precioTotal1, cantidad1));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+
                     System.out.println("Añadido al carrito: " + cantidad1 + " x " + tipoPizza + " = " + precioTotal1);
                     System.out.println("------------------------------------------------------------------------------------------------------");
 
@@ -3138,14 +3488,16 @@ public class Pizza_hub {
                     double subtotal2 = precioTotal2 / (1 + IGV);
                     double montoIGV2 = precioTotal2 - subtotal2;
 
-                    System.out.println("Subtotal: " + subtotal2);
-                    System.out.println("IGV: " + montoIGV2);
-                    System.out.println("Precio Total: " + precioTotal2);
+                    System.out.printf("Subtotal: %.2f%n", subtotal2);
+                    System.out.printf("IGV: %.2f%n", montoIGV2);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal2);
                     System.out.println("------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                          COMBO PILSEN FAMILIAR HUT CHEESE 4 EN 1");
                     tipoPizza = "COMBO PILSEN FAMILIAR HUT CHEESE 4 EN 1";
                     carrito.add(new Producto(tipoPizza, precioTotal2, cantidad2));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+
                     System.out.println("Añadido al carrito: " + cantidad2 + " x " + tipoPizza + " = " + precioTotal2);
                     total += precioTotal2;
                     System.out.println("-----------------------------------------------------------------------------------------------");
@@ -3165,14 +3517,16 @@ public class Pizza_hub {
                     double subtotal3 = precioTotal3 / (1 + IGV);
                     double montoIGV3 = precioTotal3 - subtotal3;
 
-                    System.out.println("Subtotal: " + subtotal3);
-                    System.out.println("IGV: " + montoIGV3);
-                    System.out.println("Precio Total: " + precioTotal3);
+                    System.out.printf("Subtotal: %.2f%n", subtotal3);
+                    System.out.printf("IGV: %.2f%n", montoIGV3);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal3);
                     System.out.println("------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                    HUT COMPLETO MEDIANO");
                     tipoPizza = "HUT COMPLETO MEDIANO";
                     carrito.add(new Producto(tipoPizza, precioTotal3, cantidad3));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+
                     System.out.println("Añadido al carrito: " + cantidad3 + " x " + tipoPizza + " = " + precioTotal3);
                     System.out.println("------------------------------------------------------------------------------------------------------");
 
@@ -3194,14 +3548,16 @@ public class Pizza_hub {
                     double subtotal4 = precioTotal4 / (1 + IGV);
                     double montoIGV4 = precioTotal4 - subtotal4;
 
-                    System.out.println("Subtotal: " + subtotal4);
-                    System.out.println("IGV: " + montoIGV4);
-                    System.out.println("Precio Total: " + precioTotal4);
+                    System.out.printf("Subtotal: %.2f%n", subtotal4);
+                    System.out.printf("IGV: %.2f%n", montoIGV4);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal4);
                     System.out.println("------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                    DOBLE O NADA GRANDE");
                     tipoPizza = "DOBLE O NADA GRANDE";
                     carrito.add(new Producto(tipoPizza, precioTotal4, cantidad4));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+
                     System.out.println("Añadido al carrito: " + cantidad4 + " x " + tipoPizza + " = " + precioTotal4);
                     System.out.println("------------------------------------------------------------------------------------------------------");
 
@@ -3224,14 +3580,16 @@ public class Pizza_hub {
                     double subtotal5 = precioTotal5 / (1 + IGV);
                     double montoIGV5 = precioTotal5 - subtotal5;
 
-                    System.out.println("Subtotal: " + subtotal5);
-                    System.out.println("IGV: " + montoIGV5);
-                    System.out.println("Precio Total: " + precioTotal5);
+                    System.out.printf("Subtotal: %.2f%n", subtotal5);
+                    System.out.printf("IGV: %.2f%n", montoIGV5);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal5);
                     System.out.println("------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                    4 HITS EN 1 GRANDE");
                     tipoPizza = "4 HITS EN 1 GRANDE";
                     carrito.add(new Producto(tipoPizza, precioTotal5, cantidad5));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+
                     System.out.println("Añadido al carrito: " + cantidad5 + " x " + tipoPizza + " = " + precioTotal5);
                     System.out.println("------------------------------------------------------------------------------------------------------");
 
@@ -3255,14 +3613,16 @@ public class Pizza_hub {
                     double subtotal6 = precioTotal6 / (1 + IGV);
                     double montoIGV6 = precioTotal6 - subtotal6;
                     System.out.println("------------------------------------------------------------------------------------------------");
-                    System.out.println("Subtotal: " + subtotal6);
-                    System.out.println("IGV: " + montoIGV6);
-                    System.out.println("Precio Total: " + precioTotal6);
+                    System.out.printf("Subtotal: %.2f%n", subtotal6);
+                    System.out.printf("IGV: %.2f%n", montoIGV6);
+                    System.out.printf("Precio Total: %.2f%n", precioTotal6);
                     System.out.println("------------------------------------------------------------------------------------------------------");
                     System.out.println("                                USTED A ADQUIRIDO EL PRODUCTO");
                     System.out.println("                                   DOBLE O NADA FAMILIAR");
                     tipoPizza = "DOBLE O NADA FAMILIAR";
                     carrito.add(new Producto(tipoPizza, precioTotal6, cantidad6));
+                    System.out.println("--------------------------------------------------------------------------------------------------------");
+
                     System.out.println("Añadido al carrito: " + cantidad6 + " x " + tipoPizza + " = " + precioTotal6);
                     System.out.println("------------------------------------------------------------------------------------------------------");
 
@@ -3283,7 +3643,7 @@ public class Pizza_hub {
         DecimalFormat df = new DecimalFormat("0.00"); // Formato para dos decimales
         System.out.println("\n=== Boleta de Pago ===");
         System.out.println("Nombre: ");
-        System.out.println("Monto pagado: $" + df.format(total));
+        System.out.println("Monto pagado: $" + df.format(+total));
         System.out.println("Saldo total: $");
         System.out.println("======================\n");
         System.out.println("--------------------------------------------------------------------");
@@ -3302,66 +3662,155 @@ public class Pizza_hub {
         System.out.println("Total del carrito: " + df.format(totalCarrito) + " soles.");
     }
 
-    public static void emitirFactura(double totalCarrito ) {
+    public static void emitirFactura(double totalCarrito) {
+        StringBuilder facturaContenido = new StringBuilder();
         SimpleDateFormat fechitaUgU = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date fecha = new Date();
         DecimalFormat df = new DecimalFormat("0.00");
         double igv = totalCarrito * 0.18;
-        double subtotal = totalCarrito  - igv;
-        System.out.println("--------------------------------------------------------------------");
-        System.out.println();
-        System.out.println("                       ------ Factura ------                        ");
-        System.out.println("             ██████╗ ██╗██╗  ██╗ █████╗ ██╗██╗     ██╗   ██╗");
-        System.out.println("             ██╔══██╗██║██║  ██║██╔══██╗██║██║     ██║   ██║");
-        System.out.println("             ██████╔╝██║███████║███████║██║██║     ██║   ██║");
-        System.out.println("             ██╔═══╝ ██║██╔══██║██╔══██║██║██║     ██║   ██║");
-        System.out.println("             ██║     ██║██║  ██║██║  ██║██║███████╗╚██████╔╝");
-        System.out.println("             ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝ ");
-        System.out.println("Fecha: " + fechitaUgU.format(fecha));
-        System.out.println("Detalles del pedido:");
+        double subtotal = totalCarrito - igv;
+        double totalisimo = subtotal + igv;
+
+        facturaContenido.append("--------------------------------------------------------------------\n\n");
+        facturaContenido.append("                       ------ Factura ------                        \n");
+        facturaContenido.append("             ██████╗ ██╗██╗  ██╗ █████╗ ██╗██╗     ██╗   ██╗\n");
+        facturaContenido.append("             ██╔══██╗██║██║  ██║██╔══██╗██║██║     ██║   ██║\n");
+        facturaContenido.append("             ██████╔╝██║███████║███████║██║██║     ██║   ██║\n");
+        facturaContenido.append("             ██╔═══╝ ██║██╔══██║██╔══██║██║██║     ██║   ██║\n");
+        facturaContenido.append("             ██║     ██║██║  ██║██║  ██║██║███████╗╚██████╔╝\n");
+        facturaContenido.append("             ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝ \n");
+        facturaContenido.append("Fecha: ").append(fechitaUgU.format(fecha)).append("\n");
+        facturaContenido.append("Detalles del pedido:\n");
+
         for (Producto producto : carrito) {
             double subtotalCarrito = producto.calcularSubtotal();
             totalCarrito += subtotalCarrito;
-            System.out.println(producto.cantidad + " x " + producto.nombre + " - Subtotal: " + subtotalCarrito + " soles.");
+            facturaContenido.append(producto.cantidad).append(" x ").append(producto.nombre)
+                    .append(" - Subtotal: ").append(df.format(subtotalCarrito)).append(" soles.\n");
         }
-        System.out.println("Subtotal: $" + df.format(subtotal));
-        System.out.println("IGV: $" + df.format(igv));
-        System.out.println("Total: $" + df.format(totalCarrito));
-        System.out.println("--------------------------------------------------------------------");
-        System.out.println("¡Gracias por su compra!");
-        System.out.println("  SIUUUUUUUUUUUUUUUU");
+
+        facturaContenido.append("Subtotal: $").append(df.format(subtotal)).append("\n");
+        facturaContenido.append("IGV: $").append(df.format(igv)).append("\n");
+        facturaContenido.append("Total: $").append(df.format(totalisimo)).append("\n");
+        facturaContenido.append("--------------------------------------------------------------------\n");
+        facturaContenido.append("¡Gracias por su compra!\n");
+        facturaContenido.append("  SIUUUUUUUUUUUUUUUU\n");
+
+        exportarFacturaTxt(facturaContenido.toString());
+
         System.exit(0);
     }
 
+    public static void exportarFacturaTxt(String contenido) {
+        try {
+            FileWriter writer = new FileWriter("factura.txt");
+            writer.write(contenido);
+            writer.close();
+            System.out.println("Factura exportada exitosamente en factura.txt");
+        } catch (IOException e) {
+            System.err.println("Error al exportar la factura: " + e.getMessage());
+        }
+    }
+
     public static void medotoPago() {
+        String caducidad,cvv;
         DecimalFormat df = new DecimalFormat("0.00");
         double totalCarrito = 0;
-        for (Producto producto : carrito) {
-            totalCarrito += producto.calcularSubtotal();
 
-            System.out.println("--------------------------------------------------------------------");
-            System.out.println("El total a pagar es de: "+ df.format(totalCarrito));
-            System.out.println("Ingresar saldo: ");
-            double Saldo = sc.nextInt();
-            if (Saldo < totalCarrito) {
-                System.out.println("Saldo insuficiente");
-                System.out.println("Retirese por favor");
-                System.out.println("--------------------------------------------------------------------");
-                System.exit(0);
 
-            } else if (Saldo == totalCarrito) {
-                System.out.println("Pago realizado con exito");
-                emitirFactura(totalCarrito);
+        for (Producto DANIEL : carrito) {
+            double subtotal = DANIEL.calcularSubtotal();
+            totalCarrito += subtotal;
+        }
+        System.out.println("--------------------------------------------------------------------");
+        System.out.println("El total a pagar es de: " + df.format(totalCarrito));
+        System.out.println("Elija su metodo de pago");
+        System.out.println("1. Tarjeta de Credito");
+        System.out.println("2. Yape");
+        int formaPago = sc.nextInt();
+        sc.nextLine();
+        switch (formaPago) {
+            case 1:
 
-            } else if (Saldo > totalCarrito) {
-                System.out.println("El pago ha sido excedido");
-                double cambio = Saldo - totalCarrito;
-                System.out.println("Pago realizado con exito");
-                System.out.println("Su cambio seria de: " + df.format(cambio));
-                System.out.println("--------------------------------------------------------------------");
-                emitirFactura(totalCarrito);
+                System.out.println("Usted ha elegido pagar con Tarjeta de Credito");
+                while (true) {
+                    System.out.println("Ingrese el Numero de su Tarjeta");
+                    String Tarjeta = sc.nextLine();
+                    System.out.println("Ingrese la caducidad de tu tarjeta");
+                    caducidad= sc.nextLine();
+                    if (Tarjeta.length() == 16 && Tarjeta.matches("[0-9]+")) {
+                        System.out.println("Ingrese la CVV, Que esta detras de su tarjeta");
+                        cvv= sc.nextLine();
+                        if(cvv.length() == 4 && cvv.matches("[0-9]+")){
+                            System.out.println("Ingresar saldo: ");
+                            double Saldo = sc.nextInt();
+                            if (Saldo < totalCarrito) {
+                                System.out.println("Saldo insuficiente");
+                                System.out.println("Retirese por favor");
+                                System.out.println("--------------------------------------------------------------------");
+                                System.exit(0);
 
-            }
+                            } else if (Saldo == totalCarrito) {
+                                System.out.println("Pago realizado con exito");
+                                emitirFactura(totalCarrito);
+
+                            } else if (Saldo > totalCarrito) {
+                                double cambio = Saldo - totalCarrito;
+                                System.out.println("Pago realizado con exito");
+                                System.out.println("Su cambio seria de: " + df.format(cambio));
+                                System.out.println("--------------------------------------------------------------------");
+                                emitirFactura(totalCarrito);
+                            }break;
+
+                        }
+                        else {
+                            System.out.println("CVV incorrecto");
+
+                        }
+
+                    }
+                    else {
+                        System.out.println("----------------------------------------------------------------------------------");
+                        System.out.println("❌❌❌❌Numero no valido❌❌❌❌");
+                    }}
+                break;
+
+            case 2:
+
+                System.out.println("Usted ha elegido pagar con Yape");
+                while (true) {
+                    System.out.println("Ingrese su Numero de Yape");
+                    String yape = sc.nextLine();
+                    if (yape.length() == 9 && yape.matches("[0-9]+")) {
+                        System.out.println("Ingresar saldo: ");
+                        double Saldo = sc.nextInt();
+                        if (Saldo < totalCarrito) {
+                            System.out.println("Saldo insuficiente");
+                            System.out.println("Retirese por favor");
+                            System.out.println("--------------------------------------------------------------------");
+                            System.exit(0);
+
+                        } else if (Saldo == totalCarrito) {
+                            System.out.println("Pago realizado con exito");
+                            emitirFactura(totalCarrito);
+
+                        } else if (Saldo > totalCarrito) {
+                            double cambio = Saldo - totalCarrito;
+                            System.out.println("Pago realizado con exito");
+                            System.out.println("Su cambio seria de: " + df.format(cambio));
+                            System.out.println("--------------------------------------------------------------------");
+                            emitirFactura(totalCarrito);
+                            break;
+                        }
+                    } else {
+                        System.out.println("-------------------------------------------------------------------------");
+                        System.out.println("❌❌❌❌No se encotro el Numero❌❌❌❌ ");
+
+                    }}
+                break;
+
+            default:
+                System.out.println("Opcion no valida");
         }
     }
 }
