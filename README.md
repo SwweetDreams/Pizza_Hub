@@ -1,3 +1,6 @@
+import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,7 +22,7 @@ public class Pizza_Hut_com {
 
     public static Map<String, String> cuentas = new HashMap<>();
 
-    public static final String USUARIO_PREDETERMINADO = "ben";
+    public static final String USUARIO_PREDETERMINADO = "Ben";
     public static final String CONTRASENA_PREDETERMINADA = "23";
 
     public static void main(String[] args) {
@@ -3679,8 +3682,8 @@ public class Pizza_Hut_com {
         facturaContenido.append("             ██╔═══╝ ██║██╔══██║██╔══██║██║██║     ██║   ██║\n");
         facturaContenido.append("             ██║     ██║██║  ██║██║  ██║██║███████╗╚██████╔╝\n");
         facturaContenido.append("             ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ ╚═════╝ \n");
-        facturaContenido.append("A nombre de: "+USUARIO_PREDETERMINADO+("\n"));
         facturaContenido.append("Fecha: ").append(fechitaUgU.format(fecha)).append("\n");
+        facturaContenido.append("Nombre: "+USUARIO_PREDETERMINADO+"\n");
         facturaContenido.append("Detalles del pedido:\n");
 
         for (Producto producto : carrito) {
@@ -3712,9 +3715,20 @@ public class Pizza_Hut_com {
             System.err.println("Error al exportar la factura: " + e.getMessage());
         }
     }
+    public static boolean verificarVigencia(String fechaExpiracion) {
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
+            YearMonth fechaExp = YearMonth.parse(fechaExpiracion, formatter);
+            YearMonth fechaActual = YearMonth.now();
+            return !fechaExp.isBefore(fechaActual);
+        } catch (DateTimeParseException e) {
+            System.out.println("La fecha ingresada no es válida. Por favor, usa el formato MM/yy.");
+            return false;
+        }
+    }
 
     public static void medotoPago() {
-        String caducidad,cvv;
+
         DecimalFormat df = new DecimalFormat("0.00");
         double totalCarrito = 0;
 
@@ -3731,51 +3745,63 @@ public class Pizza_Hut_com {
         int formaPago = sc.nextInt();
         sc.nextLine();
         switch (formaPago) {
+
             case 1:
-
-                System.out.println("Usted ha elegido pagar con Tarjeta de Credito");
                 while (true) {
-                    System.out.println("Ingrese el Numero de su Tarjeta");
+                    System.out.println("Ingrese Numero de Tarjeta");
                     String Tarjeta = sc.nextLine();
-                    System.out.println("Ingrese la caducidad de tu tarjeta");
-                    caducidad= sc.nextLine();
                     if (Tarjeta.length() == 16 && Tarjeta.matches("[0-9]+")) {
-                        System.out.println("Ingrese la CVV, Que esta detras de su tarjeta");
-                        cvv= sc.nextLine();
-                        if(cvv.length() == 4 && cvv.matches("[0-9]+")){
-                            System.out.println("Ingresar saldo: ");
-                            double Saldo = sc.nextInt();
-                            if (Saldo < totalCarrito) {
-                                System.out.println("Saldo insuficiente");
-                                System.out.println("Retirese por favor");
-                                System.out.println("--------------------------------------------------------------------");
-                                System.exit(0);
+                        System.out.println("Numero Valido");
+                        while (true){
+                            System.out.println("Ingrese CVV");
+                            String ICV = sc.nextLine();
+                            if (ICV.length() == 3 && ICV.matches("[0-9]+")){
+                                System.out.println("Numero Valido");
+                                while (true){
+                                    System.out.print("Ingresa la fecha de expiración de la tarjeta (MM/yy): ");
+                                    String fechaExpiracion = sc.nextLine();
+                                    boolean esVigente = verificarVigencia(fechaExpiracion);
+                                    if (esVigente) {
+                                        System.out.println("La tarjeta está vigente.");
 
-                            } else if (Saldo == totalCarrito) {
-                                System.out.println("Pago realizado con exito");
-                                emitirFactura(totalCarrito);
+                                        System.out.println("Ingresar saldo: ");
+                                        double Saldo = sc.nextDouble();
 
-                            } else if (Saldo > totalCarrito) {
-                                double cambio = Saldo - totalCarrito;
-                                System.out.println("Pago realizado con exito");
-                                System.out.println("Su cambio seria de: " + df.format(cambio));
-                                System.out.println("--------------------------------------------------------------------");
-                                emitirFactura(totalCarrito);
-                            }break;
+                                        if (Saldo < totalCarrito) {
+                                            System.out.println("Saldo insuficiente");
+                                            System.out.println("Retírese por favor");
+                                            System.out.println("--------------------------------------------------------------------");
+                                            System.exit(0);
+                                        } else if (Saldo == totalCarrito) {
+                                            System.out.println("Pago realizado con éxito");
+                                            emitirFactura(totalCarrito);
+                                            break;
+                                        } else if (Saldo > totalCarrito) {
+                                            double cambio = Saldo - totalCarrito;
+                                            System.out.println("Pago realizado con éxito");
+                                            System.out.println("Su cambio sería de: " + df.format(cambio));
+                                            System.out.println("--------------------------------------------------------------------");
+                                            emitirFactura(totalCarrito);
+                                            break;
+                                        }
+                                    } else {
+                                        System.out.println("La tarjeta ha expirado.");
+                                    }
+                                }
+                                break;
+                            }
+                            else {
+                                System.out.println("Numero no Valido");
+                            }
 
                         }
-                        else {
-                            System.out.println("CVV incorrecto");
-
-                        }
-
+                        sc.nextLine();
+                        break;
+                    }else {
+                        System.out.println("Numero no Valido");
                     }
-                    else {
-                        System.out.println("----------------------------------------------------------------------------------");
-                        System.out.println("❌❌❌❌Numero no valido❌❌❌❌");
-                    }}
+                }
                 break;
-
             case 2:
 
                 System.out.println("Usted ha elegido pagar con Yape");
@@ -3815,3 +3841,4 @@ public class Pizza_Hut_com {
         }
     }
 }
+
