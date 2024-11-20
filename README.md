@@ -11,25 +11,52 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.FileWriter;
 
-public class Pizza_Hut_com {
+public class Pizza {
     public static ArrayList<Producto> carrito = new ArrayList<>();
 
     public static Scanner sc = new Scanner(System.in);
 
     public static double total = 0;
+
     public static final double IGV = 0.18;
+
     public static Map<String, String> cuentas = new HashMap<>();
-    public static final String USUARIO_PREDETERMINADO = "Ben";
+
+    public static final String USUARIO_PREDETERMINADO = "ben";
     public static final String CONTRASENA_PREDETERMINADA = "23";
 
     public static void main(String[] args) {
 
         while (true) {
-            System.out.println("---------------------------------------------------------------------------------------------------------");
-            System.out.println("                                        Seleccione una opción:");
-            System.out.println("             1. Crear cuenta");
-            System.out.println("             2. Usar cuenta existente");
-            System.out.println("----------------------------------------------------------------------------------------------------------");
+
+            final String RESET = "\u001B[0m";
+            final String RED = "\u001B[31m";
+            final String GREEN = "\u001B[32m";
+            final String YELLOW = "\u001B[33m";
+            final String BLUE = "\u001B[34m";
+            final String PURPLE = "\u001B[35m";
+            final String CYAN = "\u001B[36m";
+
+
+
+            System.out.println(CYAN + "❈══════════════════════════════════════════════════════════════════════════════❈" + RESET);
+            System.out.println(PURPLE + "║                           ⚜️  " + GREEN + "BIENVENIDOS" + PURPLE + "  ⚜️                                ║" + RESET);
+            System.out.println("║                                                                               ║");
+            System.out.println("║                    " + YELLOW + "╔══════════════════════════════╗" + RESET + "                           ║");
+            System.out.println("║                    " + YELLOW + "║      MENÚ DE OPCIONES        ║" + RESET + "                           ║");
+            System.out.println("║                    " + YELLOW + "╚══════════════════════════════╝" + RESET + "                           ║");
+            System.out.println("║                                                                               ║");
+            System.out.println("║                   ✧･ﾟ: *✧･ﾟ:* " + CYAN + "❋" + RESET + " *:･ﾟ✧*:･ﾟ✧                                    ║");
+            System.out.println("║                                                                                ║");
+            System.out.println("║                     " + BLUE + "【 1 】" + RESET + "  Crear Cuenta Nueva                                 ║");
+            System.out.println("║                                                                                ║");
+            System.out.println("║                     " + RED + "【 2 】" + RESET + "  Usar Cuenta Existente                             ║");
+            System.out.println("║                                                                                ║");
+            System.out.println("║                   ✧･ﾟ: *✧･ﾟ:* " + CYAN + "❋" + RESET + " *:･ﾟ✧*:･ﾟ✧                                     ║");
+            System.out.println("║                                                                                ║");
+            System.out.println("║                    " + YELLOW + "Por favor, seleccione una opción" + RESET + "                           ║");
+            System.out.println("║                                                                                ║");
+            System.out.println(CYAN + "❈══════════════════════════════════════════════════════════════════════════════❈" + RESET);
             System.out.print("        Opción: ");
             int opcionCuenta = sc.nextInt();
             sc.nextLine();
@@ -129,22 +156,30 @@ public class Pizza_Hut_com {
         System.out.println("                                     B I E N V E N I D O ");
 
 
+        
+        final String RESET = "\u001B[0m";
+        final String RED = "\u001B[31m";
+        final String GREEN = "\u001B[32m";
+        final String YELLOW = "\u001B[33m";
+        final String BLUE = "\u001B[34m";
+        final String PURPLE = "\u001B[35m";
+        final String CYAN = "\u001B[36m";
+
         System.out.println("""
-                                                              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                                                                            ⠀⠀⠀⢀⡀⠀⠀⠀⠀⠐⠻⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                                                                            ⠀⠀⠀⠀⠁⠈⠑⠄⠀⠀⠀⢀⣀⣤⣤⣤⣤⣀⣀⣀⠀⠀⠀⠀⠀⠙⠓⠀⠀⠀⠀⠀⠀⠀⠀⢀
-                             ██████╗ ██╗██╗  ██╗ █████╗ ██╗██╗     ██╗   ██╗⠀⠀⠀⠀⢠⣶⡆⠀⠀⠀⠀⢿⣉⠺⣿⣿⣿⣿⣿⣿⣷⡆⠀⠀⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈
-                             ██╔══██╗██║██║  ██║██╔══██╗██║██║     ██║   ██║⠀⠈⠢⠄⠉⠀⠀⠀⠀⠀⠈⠛⠗⠾⠿⠛⠛⠻⣿⣿⣿⡀⠀⠘⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                             ██████╔╝██║███████║███████║██║██║     ██║   ██║⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢴⣿⣦⠄⠀⠀⢀⣼⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                             ██╔═══╝ ██║██╔══██║██╔══██║██║██║     ██║   ██║⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡄⠀⠹⠿⠀⣤⣀⠀⠹⣿⣿⠏⣁⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                             ██║     ██║██║  ██║██║  ██║██║███████╗╚██████╔╝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⠼⣿⣿⣿⣿⣿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                             ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝ ⠀⠀⠀⠀⠀⠀⠀⣴⣶⣄⡀⠀⠀⢀⣤⣶⣶⣶⣶⡌⠻⠿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                                                                            ⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⡅⢼⣿⣿⣿⣼⢳⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                                                                            ⠀⠀⠀⠀⠀⠀⠀⠈⠻⠿⠻⠇⠸⠿⠛⠛⠛⠋⠁⠀⠀⡴⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                                                                            ⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠠…
-                
-                """);
-        System.out.println("                                  P I Z Z A                 H   U   D                              ");
+                                    ⠀⠀⠀⠀                          ✨ 🍕 ⭐️ 🌟 ✨ 🍕 ⭐️ 🌟 ✨  """);
+
+        System.out.println(RED +     "                     ██████╗ ██╗██╗  ██╗ █████╗ ██╗██╗     ██╗   ██╗" + RESET);
+        System.out.println(YELLOW + "                     ██╔══██╗██║██║  ██║██╔══██╗██║██║     ██║   ██║" + RESET);
+        System.out.println(GREEN +   "                     ██████╔╝██║███████║███████║██║██║     ██║   ██║" + RESET);
+        System.out.println(CYAN +    "                     ██╔═══╝ ██║██╔══██║██╔══██║██║██║     ██║   ██║" + RESET);
+        System.out.println(BLUE +    "                     ██║     ██║██║  ██║██║  ██║██║███████╗╚██████╔╝" + RESET);
+        System.out.println(PURPLE +  "                     ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝" + RESET);
+
+
+        System.out.println("\n" + "                           ╔══════════════════════════════════════════╗");
+        System.out.println(RED + "                           ║" + YELLOW + "   P" + GREEN + "   I" + CYAN + "   Z" + BLUE + "   Z" + PURPLE + "   A" + RED + "      H" + YELLOW + "   U" + GREEN + "   D   " + RESET +        "║");
+        System.out.println("                           ╚══════════════════════════════════════════╝");
+        System.out.println("\n                                 🍕 La Mejor Pizza del Mundo 🍕");
     }
 
     public static class Producto {
@@ -165,18 +200,41 @@ public class Pizza_Hut_com {
 
     public static void mostrarMenu() {
 
-        System.out.println("----------------------------------------------------------------------------------------------------------");
-        System.out.println("                                       \nMENU PRINCIPAL:");
-        System.out.println("1. Pedir pizza");
-        System.out.println("2. Pedir antojos");
-        System.out.println("3. Pedir bebidas");
-        System.out.println("4. Pedir Para Mi");
-        System.out.println("5. Pedir Ofertas");
-        System.out.println("6. Pedir Combos Huts");
-        System.out.println("7. Pedir Las Mas Huts");
-        System.out.println("8. Finalizar pedido");
-        System.out.println("9. Mostrar carrito");
-        System.out.println("----------------------------------------------------------------------------------------------------------");
+        final String RESET = "\u001B[0m";
+        final String RED = "\u001B[31m";
+        final String GREEN = "\u001B[32m";
+        final String YELLOW = "\u001B[33m";
+        final String BLUE = "\u001B[34m";
+        final String PURPLE = "\u001B[35m";
+        final String CYAN = "\u001B[36m";
+
+        System.out.println("""
+            
+            ╔══════════════════════════════════════════════════════════════════════════════╗
+            ║                                                                              ║
+            ║                    🌟 ⭐️  MENÚ PRINCIPAL PIZZAILU  ⭐️ 🌟                    ║
+            ║                                                                              ║
+            ╠══════════════════════════════════════════════════════════════════════════════╣
+            """);
+        System.out.println(RED +    "║    【 1 】  🍕 Pedir Pizza                                                    ║");
+        System.out.println(YELLOW + "║    【 2 】  🍗 Pedir Antojos                                                 ║");
+        System.out.println(GREEN +  "║    【 3 】  🥤 Pedir Bebidas                                                 ║");
+        System.out.println(CYAN +   "║    【 4 】  ⭐️ Pedir Para Mí                                                 ║");
+        System.out.println(BLUE +   "║    【 5 】  💫 Pedir Ofertas                                                 ║");
+        System.out.println(PURPLE + "║    【 6 】  🌟 Pedir Combos Huts                                             ║");
+        System.out.println(RED +    "║    【 7 】  ✨ Pedir Las Más Huts                                            ║");
+        System.out.println(YELLOW + "║    【 8 】  💝 Finalizar Pedido                                              ║");
+        System.out.println(GREEN +  "║    【 9 】  🛒 Mostrar Carrito                                               ║" + RESET);
+
+        System.out.println("""
+            ║                                                                              ║
+            ╠══════════════════════════════════════════════════════════════════════════════╣
+            ║                      🍕 ¡Disfruta de nuestro sabor! 🍕                       ║
+            ╚══════════════════════════════════════════════════════════════════════════════╝
+            """);
+
+        System.out.println("                    Seleccione una opción (1-9) para continuar");
+        System.out.println("                    ⭐️ Tu satisfacción es nuestra prioridad ⭐️\n");
     }
 
     public static int obtenerOpcionDelUsuario() {
@@ -187,33 +245,55 @@ public class Pizza_Hut_com {
     public static void procesarPizza() {
         while (true) {
 
-            System.out.println("╔═══════════════════════════════════════════════════════════════════════════╗");
-            System.out.println("║         🍕 ¡BIENVENIDO A NUESTRA INCREÍBLE CARTA DE PIZZAS! 🍕            ║");
-            System.out.println("╠═══════════════════════════════════════════════════════════════════════════╣");
-            System.out.println("║             ✨ ¿Qué aventura de sabor quieres probar hoy? ✨               ║");
-            System.out.println("║                                                                           ║");
-            System.out.println("║  【1】 4 HITS EN 1        ┃  Cuatro mundos de sabor en una sola pizza!   ║");
-            System.out.println("║  【2】 LA CHILI HUT       ┃  Para valientes amantes del picante 🌶️        ║");
-            System.out.println("║  【3】 SUPER SUPREMA      ┃  La reina de nuestras pizzas 👑               ║");
-            System.out.println("║  【4】 CHICKEN BBQ        ┃  Pollo BBQ que te hará agua la boca 🍗        ║");
-            System.out.println("║  【5】 HAWAIANA           ┃  El paraíso tropical en tu mesa 🍍            ║");
-            System.out.println("║  【6】 AMERICANA          ┃  El sabor clásico que nunca falla 🇺🇸          ║");
-            System.out.println("║  【7】 CONTINENTAL        ┃  Un viaje de sabores por el mundo 🌍           ║");
-            System.out.println("║  【8】 PEPPERONI          ┃  ¡Doble pepperoni para más diversión! 🎯      ║");
-            System.out.println("║  【9】 XL CLÁSICA         ┃  Porque el hambre grande merece pizza grande  ║");
-            System.out.println("║ 【10】 SUPREMA            ┃  ¡Todos los ingredientes en su máximo esplendor!║");
-            System.out.println("║ 【11】 MOZZARELLA         ┃  La simplicidad del mejor queso 🧀             ║");
-            System.out.println("║ 【12】 MEAT LOVERS        ┃  El festín de los amantes de la carne 🥩      ║");
-            System.out.println("║ 【13】 VEGETARIANA        ┃  Explosión de vegetales frescos 🥬            ║");
-            System.out.println("║                                                                           ║");
-            System.out.println("╠═══════════════════════════════════════════════════════════════════════════╣");
-            System.out.println("║    🌟 ¡Todas nuestras pizzas están hechas con ingredientes premium! 🌟    ║");
-            System.out.println("╚═══════════════════════════════════════════════════════════════════════════╝");
+            final String RESET = "\u001B[0m";
+            final String RED = "\u001B[31m";
+            final String GREEN = "\u001B[32m";
+            final String YELLOW = "\u001B[33m";
+            final String BLUE = "\u001B[34m";
+            final String PURPLE = "\u001B[35m";
+            final String CYAN = "\u001B[36m";
 
-            System.out.println("\n0. Volver al menú principal - Si deseas ver otras opciones");
-            System.out.println("----------------------------------------------------------------------------------------------------------");
-            System.out.print("¿Cuál te gustaría probar? (Ingresa el número): ");
+            System.out.println("\n" + RED + """
+        ╔═══════════════════════════════════════════════════════════════════════════════════╗
+        ║     ⭐️ 🍕 ✨  BIENVENIDO A NUESTRA MÁGICA CARTA DE PIZZAS  ✨ 🍕 ⭐️           ║
+        ╠═══════════════════════════════════════════════════════════════════════════════════╣""" + RESET);
 
+            System.out.println(YELLOW + """
+        ║                  Donde cada bocado es una explosión de sabor                      ║
+        ╠═══════════════════════════════════════════════════════════════════════════════════╣""" + RESET);
+
+
+            System.out.println(RED +    "║ 【1】 4 HITS EN 1" + YELLOW + "     ✦ Cuatro mundos de sabor en una sola pizza! 🎭        ║");
+            System.out.println(GREEN +  "║ 【2】 LA CHILI HUT" + CYAN + "   ✦ Para valientes amantes del picante 🌶️ 🔥               ║");
+            System.out.println(BLUE +   "║ 【3】 SUPER SUPREMA" + PURPLE + " ✦ La reina indiscutible de nuestras pizzas 👑           ║");
+            System.out.println(YELLOW + "║ 【4】 CHICKEN BBQ" + RED + "    ✦ Pollo BBQ que conquistará tu paladar 🍗                 ║");
+            System.out.println(CYAN +   "║ 【5】 HAWAIANA" + GREEN + "      ✦ El paraíso tropical en cada bocado 🌺 🍍               ║");
+            System.out.println(PURPLE + "║ 【6】 AMERICANA" + BLUE + "     ✦ El sabor clásico que todos aman 🇺🇸                       ║");
+            System.out.println(RED +    "║ 【7】 CONTINENTAL" + YELLOW + "  ✦ Un viaje gastronómico por el mundo 🌍                   ║");
+            System.out.println(GREEN +  "║ 【8】 PEPPERONI" + CYAN + "     ✦ ¡Doble pepperoni para doble felicidad! 🎯                ║");
+            System.out.println(BLUE +   "║ 【9】 XL CLÁSICA" + PURPLE + "   ✦ Tamaño gigante para aventuras gigantes 📏               ║");
+            System.out.println(YELLOW + "║【10】 SUPREMA" + RED + "       ✦ ¡La perfecta armonía de ingredientes! ✨                  ║");
+            System.out.println(CYAN +   "║【11】 MOZZARELLA" + GREEN + "   ✦ El arte de la simplicidad en su máxima expresión 🧀      ║");
+            System.out.println(PURPLE + "║【12】 MEAT LOVERS" + BLUE + "   ✦ El festín carnívoro definitivo 🥩                        ║");
+            System.out.println(RED +    "║【13】 VEGETARIANA" + YELLOW + "  ✦ Jardín de sabores frescos y naturales 🥬                ║");
+
+            System.out.println(CYAN + """
+        ╠═══════════════════════════════════════════════════════════════════════════════════╣
+        ║                     ✨ INFORMACIÓN IMPORTANTE ✨                                   ║
+        ╠═══════════════════════════════════════════════════════════════════════════════════╣""" + RESET);
+
+            System.out.println(PURPLE + """
+        ║  🌟 Todas nuestras pizzas están hechas con ingredientes premium seleccionados    ║
+        ║  🌟 Masa fresca preparada diariamente                                            ║
+        ║  🌟 Horneadas en el momento para máxima frescura                                 ║
+        ╠═══════════════════════════════════════════════════════════════════════════════════╣""" + RESET);
+
+            System.out.println(BLUE + "║              【0】 Volver al menú principal - ⬅️ Regresar                     ║");
+            System.out.println(RED + """
+        ╚═══════════════════════════════════════════════════════════════════════════════════╝
+        """ + RESET);
+
+            System.out.print(YELLOW + "✨ ¿Qué aventura de sabor te gustaría probar hoy? (Ingresa el número): " + RESET);
 
             int opcion = sc.nextInt();
             sc.nextLine();
@@ -1942,12 +2022,42 @@ public class Pizza_Hut_com {
     }
 
     public static void procesarAntojos() {
-        System.out.println("Seleccione su antojito");
-        System.out.println("Seleccione uno de los antojos o salsas");
-        System.out.println("Opcion 1.- SALADOS");
-        System.out.println("Opcion 2.- DULCES");
-        System.out.println("Opcion 3.- SALSAS");
-        System.out.println("Opcion 4.- VOLVER");
+        final String RESET = "\u001B[0m";
+        final String RED = "\u001B[31m";
+        final String GREEN = "\u001B[32m";
+        final String YELLOW = "\u001B[33m";
+        final String BLUE = "\u001B[34m";
+        final String PURPLE = "\u001B[35m";
+        final String CYAN = "\u001B[36m";
+
+        System.out.println("""
+        
+        ╔═══════════════════════════════════════════════════════════════════╗
+        ║           ✨ BIENVENIDO AL MUNDO DE LOS ANTOJOS ✨               ║
+        ╠═══════════════════════════════════════════════════════════════════╣
+        ║          Donde cada bocado es una explosión de sabor             ║
+        ╠═══════════════════════════════════════════════════════════════════╣
+""");
+
+        System.out.println(RED +    "║  【1】  🥨 SALADOS                                              ║");
+        System.out.println(        "║        ┗━━ Deliciosos snacks para picar                       ║");
+        System.out.println(YELLOW + "║                                                                 ║");
+        System.out.println(PURPLE + "║  【2】  🍪 DULCES                                               ║");
+        System.out.println(        "║        ┗━━ Endulza tu día con nuestros postres                ║");
+        System.out.println(YELLOW + "║                                                                 ║");
+        System.out.println(GREEN +  "║  【3】  🌶️ SALSAS                                               ║");
+        System.out.println(        "║        ┗━━ El complemento perfecto para tus antojos           ║");
+        System.out.println(YELLOW + "║                                                                 ║");
+        System.out.println(BLUE +   "║  【4】  ⬅️ VOLVER                                               ║");
+        System.out.println(        "║        ┗━━ Regresar al menú principal                         ║");
+
+        System.out.println(YELLOW + """
+        ╠═══════════════════════════════════════════════════════════════════╣
+        ║            🌟 ¡Complementa tu pizza a la perfección! 🌟           ║
+        ╚═══════════════════════════════════════════════════════════════════╝
+""" + RESET);
+
+        System.out.print(CYAN + "✨ Seleccione una opción (1-4): " + RESET);
         int antojitos = sc.nextInt();
         String tipoPizza;
         switch (antojitos) {
@@ -1983,6 +2093,7 @@ public class Pizza_Hut_com {
                                 8 UNIDADES HAWAIANO $16.90        |                   3 sabores                       |
                         
                         Opcion 7: No""");
+
                 int salados = sc.nextInt();
                 switch (salados) {
                     case 1:
@@ -2415,28 +2526,52 @@ public class Pizza_Hut_com {
     }
 
     public static void procesarBebidas() {
-        System.out.println("Seleccione sus bebidas");
-        System.out.println("""
-                              BEBIDAS
-                Opcion 1:  (COCA COLA SIN AZUCAR)   | Para recojo de tienda se entregarán vasos |
-                Precio:   - PERSONAL ($4.90)        |        de gaseosa según apliquen          |
-                          - 1 LITRO  ($8.90)
-                
-                Opcion 2: (INCA KOLA SIN AZUCAR)    | Para recojo de tienda se entregarán vasos |
-                Precio:   - PERSONAL  ($4.90)       |       de gaseosa según apliquen           |
-                          -1 LITRO   ($8.90)
-                
-                Opcion 3: (SPRITE PERSONAL)         | Para recojo de tienda se entregara 1 vaso |
-                Precio:   ($4.90)                   |       de gaseosa según apliquen           |
-                
-                Opcion 4: (FANTA PERSONAL)          | Para recojo de tienda se entregara 1 vaso |
-                Precio:   ($4.90)                   |       de gaseosa según apliquen           |
-                
-                Opcion 5: (AGUA SAN LUIS SIN GAS)   |         Agua San Luis sin gas|            |
-                Precio:   ($4.90)
-                
-                Opcion 6: Volver
-                """);
+        final String RESET = "\u001B[0m";
+        final String RED = "\u001B[31m";
+        final String GREEN = "\u001B[32m";
+        final String YELLOW = "\u001B[33m";
+        final String BLUE = "\u001B[34m";
+        final String PURPLE = "\u001B[35m";
+        final String CYAN = "\u001B[36m";
+
+        System.out.println("\n" + GREEN + """
+        ╔═══════════════════════════════════════════════════════════════════════════════════╗
+        ║                  ⭐️ 🍹 BIENVENIDO A NUESTRA CARTA DE BEBIDAS 🍹 ⭐️                  ║
+        ╠═══════════════════════════════════════════════════════════════════════════════════╣""" + RESET);
+
+        System.out.println(YELLOW + """
+        ║                 ¡Disfruta de nuestras refrescantes bebidas! ✨                     ║
+        ╠═══════════════════════════════════════════════════════════════════════════════════╣""" + RESET);
+
+        System.out.println(RED + "║ Opcion 1:  (COCA COLA SIN AZUCAR)   | Para recojo de tienda se entregarán vasos ║");
+        System.out.println("║ Precio:   - PERSONAL ($4.90)        |        de gaseosa según apliquen          ║");
+        System.out.println("║           - 1 LITRO  ($8.90)        |                                        ║");
+        System.out.println("╠═══════════════════════════════════════════════════════════════════════════════════╣");
+
+        System.out.println(GREEN + "║ Opcion 2: (INCA KOLA SIN AZUCAR)    | Para recojo de tienda se entregarán vasos ║");
+        System.out.println("║ Precio:   - PERSONAL  ($4.90)       |       de gaseosa según apliquen           ║");
+        System.out.println("║           - 1 LITRO   ($8.90)       |                                        ║");
+        System.out.println("╠═══════════════════════════════════════════════════════════════════════════════════╣");
+
+        System.out.println(BLUE + "║ Opcion 3: (SPRITE PERSONAL)         | Para recojo de tienda se entregara 1 vaso ║");
+        System.out.println("║ Precio:   ($4.90)                   |       de gaseosa según apliquen           ║");
+        System.out.println("╠═══════════════════════════════════════════════════════════════════════════════════╣");
+
+        System.out.println(PURPLE + "║ Opcion 4: (FANTA PERSONAL)          | Para recojo de tienda se entregara 1 vaso ║");
+        System.out.println("║ Precio:   ($4.90)                   |       de gaseosa según apliquen           ║");
+        System.out.println("╠═══════════════════════════════════════════════════════════════════════════════════╣");
+
+        System.out.println(CYAN + "║ Opcion 5: (AGUA SAN LUIS SIN GAS)   |         Agua San Luis sin gas              ║");
+        System.out.println("║ Precio:   ($4.90)                   |                                        ║");
+        System.out.println("╠═══════════════════════════════════════════════════════════════════════════════════╣");
+
+        System.out.println(RED + "║ Opcion 6: Volver                   | Regresar al menú anterior                 ║");
+        System.out.println("╚═══════════════════════════════════════════════════════════════════════════════════╝");
+
+        System.out.println(BLUE + "║              【0】 Volver al menú principal - ⬅️ Regresar                     ║");
+        System.out.println(RED + """
+        ╚═══════════════════════════════════════════════════════════════════════════════════╝
+        """ + RESET);
         int bebidas = sc.nextInt();
         switch (bebidas) {
             case 1:
@@ -2564,27 +2699,53 @@ public class Pizza_Hut_com {
     }
 
     public static void procesarParaMi() {
-        System.out.println("Seleccione su combo personal");
-        System.out.println("""
-                                        PARA MI
-                Opcion 1: (MY BOX CLASSICO)        | 1 Pizza Personal                                 |
-                Precio: $14.90                     | 3 Palitos a la Siliciana                         |
-                                                   | 1 Bebida Personal                                |
-                
-                Opcion 2: (MY BOX SUPREMO)         | Si tienes Hambre esta caja es tuya:              |
-                Precio: $19.90                     | 1 Pizza Personal                                 |
-                                                   | 3 Alitas BBQ                                     |
-                                                   | 1 Bebida Personal                                |
-                
-                Opcion 3: (DUO LASAGNA BOLOGNESA)  | ¡Tu favorita de Siempre!                         |
-                Precio: $24.90                     | 1 Lasagna Bolognesa                              |
-                                                   | 1 Bebida Personal                                |
-                
-                Opcion 4: (MIERCOLES DE FALABELLA) | 1 Pizza Mediana (Americana, Pepperoni o Suprema) |
-                Precio: $12.90                     | 1 Bebida Regular                                 |
-                
-                Opcion 5: Volver
-                """);
+        final String RESET = "\u001B[0m";
+        final String RED = "\u001B[31m";
+        final String GREEN = "\u001B[32m";
+        final String YELLOW = "\u001B[33m";
+        final String BLUE = "\u001B[34m";
+        final String PURPLE = "\u001B[35m";
+        final String CYAN = "\u001B[36m";
+
+        
+        System.out.println("\n" + GREEN + """
+        ╔═════════════════════════════════════════════════════════════════════════════════════╗
+        ║               ⭐️ 🍕 ✨ BIENVENIDO A NUESTRA CARTA DE COMBOS  ✨ 🍕 ⭐️                ║
+        ╠═════════════════════════════════════════════════════════════════════════════════════╣""" + RESET);
+
+        System.out.println(YELLOW + """
+        ║                ¡Elige tu combo favorito y disfruta de una experiencia única! ✨       ║
+        ╠═════════════════════════════════════════════════════════════════════════════════════╣""" + RESET);
+
+
+        System.out.println(RED + "║ Opcion 1: (MY BOX CLASSICO)        | 1 Pizza Personal                                 ║");
+        System.out.println("║ Precio: $14.90                     | 3 Palitos a la Siliciana                         ║");
+        System.out.println("║                                    | 1 Bebida Personal                                ║");
+        System.out.println("╠═════════════════════════════════════════════════════════════════════════════════════╣");
+
+        System.out.println(GREEN + "║ Opcion 2: (MY BOX SUPREMO)         | Si tienes Hambre esta caja es tuya:              ║");
+        System.out.println("║ Precio: $19.90                     | 1 Pizza Personal                                 ║");
+        System.out.println("║                                    | 3 Alitas BBQ                                     ║");
+        System.out.println("║                                    | 1 Bebida Personal                                ║");
+        System.out.println("╠═════════════════════════════════════════════════════════════════════════════════════╣");
+
+        System.out.println(BLUE + "║ Opcion 3: (DUO LASAGNA BOLOGNESA)  | ¡Tu favorita de Siempre!                         ║");
+        System.out.println("║ Precio: $24.90                     | 1 Lasagna Bolognesa                              ║");
+        System.out.println("║                                    | 1 Bebida Personal                                ║");
+        System.out.println("╠═════════════════════════════════════════════════════════════════════════════════════╣");
+
+        System.out.println(PURPLE + "║ Opcion 4: (MIERCOLES DE FALABELLA) | 1 Pizza Mediana (Americana, Pepperoni o Suprema) ║");
+        System.out.println("║ Precio: $12.90                     | 1 Bebida Regular                                 ║");
+        System.out.println("╠═════════════════════════════════════════════════════════════════════════════════════╣");
+
+        System.out.println(CYAN + "║ Opcion 5: Volver                   | Regresar al menú anterior                        ║");
+        System.out.println("╚═════════════════════════════════════════════════════════════════════════════════════╝");
+
+
+        System.out.println(BLUE + "║              【0】 Volver al menú principal - ⬅️ Regresar                     ║");
+        System.out.println(RED + """
+        ╚═════════════════════════════════════════════════════════════════════════════════════╝
+        """ + RESET);
         int combos = sc.nextInt();
         switch (combos) {
             case 1:
@@ -2656,11 +2817,24 @@ public class Pizza_Hut_com {
         int opcion;
         String tipoPizza;
         do {
-            System.out.println("---------------------------------------------------------------------------------------------------");
-            System.out.println("                                   BIENVENIDO A NUESTRA CARTA");
-            System.out.println("                                         || ofertas ||");
-            System.out.println("                              SELECCIONE LA OPCION QUE MAS LE GUSTE");
-            System.out.println("""
+            final String RESET = "\u001B[0m";
+            final String RED = "\u001B[31m";
+            final String GREEN = "\u001B[32m";
+            final String BLUE = "\u001B[34m";
+            final String PURPLE = "\u001B[35m";
+            final String CYAN = "\u001B[36m";
+
+
+
+            System.out.println("\n" + GREEN + """
+        ╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+        ║                             ⭐️ BIENVENIDO A NUESTRA CARTA ⭐️                                           ║
+        ╠════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+        ║                                     || ofertas ||                                                      ║
+        ║                            SELECCIONE LA OPCION QUE MAS LE GUSTE                                       ║
+        ╠════════════════════════════════════════════════════════════════════════════════════════════════════════╣""" + RESET);
+
+            System.out.println(RED + """
                      _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
                     |              1                  |                 2                 |                  3                |
                     |        2X1 PIZZAS MEDIANAS      |           COMBO MEDIANO           |               LA FIJA             |
@@ -2671,8 +2845,11 @@ public class Pizza_Hut_com {
                     |                                 |                                   |                                   |
                     |                  desde S/20.90  |                   desde S/21.90   |                  desde S/19.90    |
                     |                                 |                                   |                                   |
-                     - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - -
-                       _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+                     - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - - """ + RESET);
+
+            System.out.println(GREEN + """
+        
+                     _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
                     |               4                 |                5                  |                 6                 |
                     |         BANQUETE GRANDE         |         BANQUETE FAMILIAR         |        COMBO MEDIANO 4 EN 1       |
                     |                                 |                                   |                                   |
@@ -2682,7 +2859,10 @@ public class Pizza_Hut_com {
                     |                                 | Bebida 1L                         |                                   |
                     |                  desde S/39.90  |                desde S/49.90      |                  desde S/24.90    |
                     |                                 |                                   |                                   |
-                     - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - -
+                     - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - - """ + RESET);
+
+            System.out.println(BLUE + """
+        
                      _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
                     |                7                |                 8                 |                  9                |
                     |        COMBO GRANDE 4 EN 1      |       COMBO FANILIAR 4 EN 1       | COMBO FAMILIAR HUT CHEESE 4 EN 1  |
@@ -2693,7 +2873,9 @@ public class Pizza_Hut_com {
                     |                                 |                                   |                                   |
                     |                  desde S/34.90  |                   desde S/44.90   |                  desde S/50.90    |
                     |                                 |                                   |                                   |
-                     - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - -
+                     - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - - """ + RESET);
+
+            System.out.println(PURPLE + """
                       _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
                     |                10               |                11                 |                12                 |
                     |         HUT COMBO MEDIANO       |           COMBO LA FIJA           |        HUT CHEESE MEDIANO         |
@@ -2704,7 +2886,9 @@ public class Pizza_Hut_com {
                     |                                 |                                   |                                   |
                     |                  desde S/24.90  |                   desde S/24.90   |                  desde S/26.90    |
                     |                                 |                                   |                                   |
-                     - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - -
+                     - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - - """ + RESET);
+
+            System.out.println(CYAN + """
                       _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
                     |                13               |               14                  |                 15                |
                     |     PIZZA GRANDE HUT CHEESE     |      BANQUETE GRANDE HUT CHEESE   |         COMBO CHEESY BITES        |
@@ -2715,8 +2899,10 @@ public class Pizza_Hut_com {
                     |                                 |                                   |                                   |
                     |                  desde S/32.90  |                   desde S/45.90   |                  desde S/49.90    |
                     |                                 |                                   |                                   |
-                     - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - -
-                       _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _                                     _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+                     - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - - """ + RESET);
+
+            System.out.println(RED + """
+                      _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _                                     _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
                     |                16               |                                   |                  17               |
                     |          COMBO PIZZA XL         |                                   |        COMBO TRIPACK FAMILIAR     |
                     |                                 |                                   |                                   |
@@ -2726,8 +2912,7 @@ public class Pizza_Hut_com {
                     |                                 |                                   |                                   |
                     |                  desde S/69.90  |                                   |                  desde S/112.90   |
                     |                                 |                                   |                                   |
-                     - - - - - - - - -  - - - - - - - -                                   |  - - - - - - - - -  - - - - - - - -
-                    """);
+                     - - - - - - - - -  - - - - - - - -                                   |  - - - - - - - - -  - - - - - - - - """ + RESET);
             System.out.println("------------------------------------------------------------------------------------------------------------");
             System.out.print("Opcion:");
             opcion = sc.nextInt();
@@ -3250,29 +3435,38 @@ public class Pizza_Hut_com {
     }
 
     public static void procesarCombosHuts() {
-        System.out.println("╔═🌸══════════════════════════════════════════════════════════🌸═══╗");
-        System.out.println("║            ♡ ⋆｡ ° ✮ MENÚ DE COMBOS HUTS ✮ ° ｡⋆ ♡                ║");
-        System.out.println("║                     ・。✧♡✧。・゜゜・。                            ║");
-        System.out.println("╠════════════════════•✧✧•════════════════════════════════════════╣");
-        System.out.println("║  1. ✿ Hut Days ..................................... $ 49.90   ║");
-        System.out.println("║  2. ✿ Hut Days Doble ............................... $ 39.90   ║");
-        System.out.println("║  3. ✿ Doble o Nada Hut Cheese ...................... $ 79.90   ║");
-        System.out.println("║  4. ✿ Tripack Grande Hut Cheese .................... $ 94.90   ║");
-        System.out.println("║  5. ✿ Combo Doble o Nada Grande .................... $ 59.90   ║");
-        System.out.println("║  6. ✿ Combo Semi Full Grande ....................... $ 59.90   ║");
-        System.out.println("║  7. ✿ Banquete Familiar Hut Cheese ................. $ 55.90   ║");
-        System.out.println("║  8. ✿ Tripack Familiar ............................. $ 99.90   ║");
-        System.out.println("║  9. ✿ Tripack Grande ............................... $ 79.90   ║");
-        System.out.println("║ 10. ✿ Combo Tripack Grande Hut Cheese .............. $ 99.90   ║");
-        System.out.println("║ 11. ✿ Combo Semi Full Familiar ..................... $ 79.90   ║");
-        System.out.println("║ 12. ✿ Combo Semi Full Familiar Hut Cheese .......... $ 89.90   ║");
-        System.out.println("║ 13. ✿ Combo Doble o Nada Familiar .................. $ 82.90   ║");
-        System.out.println("║ 14. ✿ Combo Doble o Nada Familiar Hut Cheese ....... $ 92.90   ║");
-        System.out.println("╠════════════════════•✧✧•════════════════════════════════════════╣");
-        System.out.println("║          ♡ Gracias por preferir nuestros combos ♡              ║");
-        System.out.println("╚═🌸══════════════════════════════════════════════════════════🌸═══╝");
+        final String RESET = "\u001B[0m";
+        final String RED = "\u001B[31m";
+        final String GREEN = "\u001B[32m";
+        final String YELLOW = "\u001B[33m";
+        final String BLUE = "\u001B[34m";
+        final String PURPLE = "\u001B[35m";
+        
 
-        System.out.print("Seleccione una opción: ");
+
+        System.out.println(PURPLE + "╔═🌸══════════════════════════════════════════════════════════🌸═══╗" + RESET);
+        System.out.println(RED + "║            ♡ ⋆｡ ° ✮ MENÚ DE COMBOS HUTS ✮ ° ｡⋆ ♡                " + PURPLE + "║" + RESET);
+        System.out.println(YELLOW + "║                     ・。✧♡✧。・゜゜・。                            " + PURPLE + "║" + RESET);
+        System.out.println(BLUE + "╠════════════════════•✧✧•════════════════════════════════════════╣" + RESET);
+        System.out.println(GREEN + "║  1. ✿ Hut Days ..................................... $ 49.90   ║" + RESET);
+        System.out.println(RED + "║  2. ✿ Hut Days Doble ............................... $ 39.90   ║" + RESET);
+        System.out.println(YELLOW + "║  3. ✿ Doble o Nada Hut Cheese ...................... $ 79.90   ║" + RESET);
+        System.out.println(BLUE + "║  4. ✿ Tripack Grande Hut Cheese .................... $ 94.90   ║" + RESET);
+        System.out.println(GREEN + "║  5. ✿ Combo Doble o Nada Grande .................... $ 59.90   ║" + RESET);
+        System.out.println(RED + "║  6. ✿ Combo Semi Full Grande ....................... $ 59.90   ║" + RESET);
+        System.out.println(YELLOW + "║  7. ✿ Banquete Familiar Hut Cheese ................. $ 55.90   ║" + RESET);
+        System.out.println(BLUE + "║  8. ✿ Tripack Familiar ............................. $ 99.90   ║" + RESET);
+        System.out.println(GREEN + "║  9. ✿ Tripack Grande ............................... $ 79.90   ║" + RESET);
+        System.out.println(RED + "║ 10. ✿ Combo Tripack Grande Hut Cheese .............. $ 99.90   ║" + RESET);
+        System.out.println(YELLOW + "║ 11. ✿ Combo Semi Full Familiar ..................... $ 79.90   ║" + RESET);
+        System.out.println(BLUE + "║ 12. ✿ Combo Semi Full Familiar Hut Cheese .......... $ 89.90   ║" + RESET);
+        System.out.println(GREEN + "║ 13. ✿ Combo Doble o Nada Familiar .................. $ 82.90   ║" + RESET);
+        System.out.println(RED + "║ 14. ✿ Combo Doble o Nada Familiar Hut Cheese ....... $ 92.90   ║" + RESET);
+        System.out.println(PURPLE + "╠════════════════════•✧✧•════════════════════════════════════════╣" + RESET);
+        System.out.println(YELLOW + "║          ♡ Gracias por preferir nuestros combos ♡              " + PURPLE + "║" + RESET);
+        System.out.println(PURPLE + "╚═🌸══════════════════════════════════════════════════════════🌸═══╝" + RESET);
+
+        System.out.print(GREEN + "Seleccione una opción: " + RESET);
         int opcion = sc.nextInt();
         sc.nextLine();
 
@@ -3366,44 +3560,59 @@ public class Pizza_Hut_com {
         int opcion;
         do {
 
+            final String RESET = "\u001B[0m";
+            final String RED = "\u001B[31m";
+            final String GREEN = "\u001B[32m";
+            final String YELLOW = "\u001B[33m";
+
+
+
+            System.out.println("\n" + GREEN + """
             System.out.println("---------------------------------------------------------------------------------------------------");
             System.out.println("                             BIENVENIDO A NUESTRA CARTA |||las mas huts|||");
             System.out.println("                                 SELECCIONE LA OPCION QUE MAS LE GUSTE");
-            System.out.println("""
-                     _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-                    |              1                  |               2                   |                 3                 |
-                    |    COMBO PILSEN GRANDE 4 EN 1   |   COMBO PILSEN FAMILIAR 4 EN 1    | COMBO PILSEN FAMILIAR HUT CHEESE  |
-                    |                                 |                                   |             4 EN 1                |
-                    | ¡El combo de los patas!1 pizza  | ¡El duo perfecto!1 pizza familiar |                                   |
-                    | grande +1 sixpack Pilsen Callao | +1 sixpack Pilsen Callao.         | ¡El duo perfecto!1 pizza familiar |
-                    | Para +18 años.                  | Para +18 años.                    | HCH+ 1sixpack Pilsen Callao.      |
-                    |                                 |                                   | Para +18 años.                    |
-                    |                  desde S/49.90  |                desde S/59.90      |                  desde S/65.90    |
-                    |                                 |                                   |                                   |
-                     - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - -
-                       _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-                    |               4                 |                5                  |                6                  |
-                    |       HUT COMPLETO MEDIANO      |        DOBLE O NADA GRANDE        |        4 HITS EN 1 GRANDE         |
-                    |                                 |                                   |                                   |
-                    | ¡Para que no te falte nada! 2   | ¡El doble para compartir!2 pizzas | ¡Tus sabores favoritos juntos!    |
-                    | Pizzas M,6 Palitos a la Sicilia | Grandes a un precio especial      | Incluye Americana,Peperoni,Supre  |
-                    | na y Bebida de 1 L              |                                   | ma y Hawaina.                     |
-                    |                                 |                                   |                                   |
-                    |                  desde S/42.90  |                desde S/49.90      |                  desde S/29.90    |
-                    |                                 |                                   |                                   |
-                     - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - -
-                                                        _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-                                                      |                7                  |
-                                                      |       DOBLE O NADA FAMILIAR       |
-                                                      |                                   |
-                                                      | Para cuando hay mucha hambre 2    |
-                                                      | Pizzas Fam, a un precio especial  |
-                                                      |                                   |
-                                                      |                                   |
-                                                      |                  desde S/72.90    |
-                                                      |                                   |
-                                                      - - - - - - - - - -  - - - - - - - - -
-                    """);
+            System.out.println("---------------------------------------------------------------------------------------------------");
+            System.out.println( """ + RESET);
+
+            System.out.println(RED + """
+             _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+            |              1                  |               2                   |                 3                 |
+            |    COMBO PILSEN GRANDE 4 EN 1   |   COMBO PILSEN FAMILIAR 4 EN 1    | COMBO PILSEN FAMILIAR HUT CHEESE  |
+            |                                 |                                   |             4 EN 1                |
+            | ¡El combo de los patas!1 pizza  | ¡El duo perfecto!1 pizza familiar |                                   |
+            | grande +1 sixpack Pilsen Callao | +1 sixpack Pilsen Callao.         | ¡El duo perfecto!1 pizza familiar |
+            | Para +18 años.                  | Para +18 años.                    | HCH+ 1sixpack Pilsen Callao.      |
+            |                                 |                                   | Para +18 años.                    |
+            |                  desde S/49.90  |                desde S/59.90      |                  desde S/65.90    |
+            |                                 |                                   |                                   |
+             - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - - """ + RESET);
+
+           System.out.println(GREEN + """
+               _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+            |               4                 |                5                  |                6                  |
+            |       HUT COMPLETO MEDIANO      |        DOBLE O NADA GRANDE        |        4 HITS EN 1 GRANDE         |
+            |                                 |                                   |                                   |
+            | ¡Para que no te falte nada! 2   | ¡El doble para compartir!2 pizzas | ¡Tus sabores favoritos juntos!    |
+            | Pizzas M,6 Palitos a la Sicilia | Grandes a un precio especial      | Incluye Americana,Peperoni,Supre  |
+            | na y Bebida de 1 L              |                                   | ma y Hawaina.                     |
+            |                                 |                                   |                                   |
+            |                  desde S/42.90  |                desde S/49.90      |                  desde S/29.90    |
+            |                                 |                                   |                                   |
+             - - - - - - - - -  - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - -  - - - - - - - - """ + RESET);
+
+             System.out.println(YELLOW  + """
+                                                _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+                                              |                7                  |
+                                              |       DOBLE O NADA FAMILIAR       |
+                                              |                                   |
+                                              | Para cuando hay mucha hambre 2    |
+                                              | Pizzas Fam, a un precio especial  |
+                                              |                                   |
+                                              |                                   |
+                                              |                  desde S/72.90    |
+                                              |                                   |
+                                              - - - - - - - - - -  - - - - - - - - - """ + RESET);
+
             System.out.println("--------------------------------------------------------------------------------------------------------");
             System.out.print("Opcion:");
 
@@ -3671,8 +3880,8 @@ public class Pizza_Hut_com {
         double subtotal = totalCarrito - igv;
         double totalisimo = subtotal + igv;
 
-        facturaContenido.append("------------------------------------------------------------------------------------\n\n");
-        facturaContenido.append("                          ------ Factura ------                        \n");
+        facturaContenido.append("--------------------------------------------------------------------\n\n");
+        facturaContenido.append("                       ------ Factura ------                        \n");
         facturaContenido.append("             ██████╗ ██╗██╗  ██╗ █████╗ ██╗██╗     ██╗   ██╗\n");
         facturaContenido.append("             ██╔══██╗██║██║  ██║██╔══██╗██║██║     ██║   ██║\n");
         facturaContenido.append("             ██████╔╝██║███████║███████║██║██║     ██║   ██║\n");
@@ -3687,13 +3896,13 @@ public class Pizza_Hut_com {
             double subtotalCarrito = producto.calcularSubtotal();
             totalCarrito += subtotalCarrito;
             facturaContenido.append(producto.cantidad).append(" x ").append(producto.nombre)
-                    .append(" - Subtotal: ").append(df.format(subtotalCarrito)).append(" soles.\n");
+                    .append(" - Subtotal: ").append(subtotalCarrito).append(" soles.\n");
         }
 
         facturaContenido.append("Subtotal: $").append(df.format(subtotal)).append("\n");
         facturaContenido.append("IGV: $").append(df.format(igv)).append("\n");
         facturaContenido.append("Total: $").append(df.format(totalisimo)).append("\n");
-        facturaContenido.append("------------------------------------------------------------------------------------\n");
+        facturaContenido.append("--------------------------------------------------------------------\n");
         facturaContenido.append("¡Gracias por su compra!\n");
         facturaContenido.append("  SIUUUUUUUUUUUUUUUU\n");
 
@@ -3838,4 +4047,3 @@ public class Pizza_Hut_com {
         }
     }
 }
-
