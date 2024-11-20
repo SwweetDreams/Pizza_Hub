@@ -17,11 +17,8 @@ public class Pizza_Hut_com {
     public static Scanner sc = new Scanner(System.in);
 
     public static double total = 0;
-
     public static final double IGV = 0.18;
-
     public static Map<String, String> cuentas = new HashMap<>();
-
     public static final String USUARIO_PREDETERMINADO = "Ben";
     public static final String CONTRASENA_PREDETERMINADA = "23";
 
@@ -3674,8 +3671,8 @@ public class Pizza_Hut_com {
         double subtotal = totalCarrito - igv;
         double totalisimo = subtotal + igv;
 
-        facturaContenido.append("--------------------------------------------------------------------\n\n");
-        facturaContenido.append("                       ------ Factura ------                        \n");
+        facturaContenido.append("------------------------------------------------------------------------------------\n\n");
+        facturaContenido.append("                          ------ Factura ------                        \n");
         facturaContenido.append("             ██████╗ ██╗██╗  ██╗ █████╗ ██╗██╗     ██╗   ██╗\n");
         facturaContenido.append("             ██╔══██╗██║██║  ██║██╔══██╗██║██║     ██║   ██║\n");
         facturaContenido.append("             ██████╔╝██║███████║███████║██║██║     ██║   ██║\n");
@@ -3696,7 +3693,7 @@ public class Pizza_Hut_com {
         facturaContenido.append("Subtotal: $").append(df.format(subtotal)).append("\n");
         facturaContenido.append("IGV: $").append(df.format(igv)).append("\n");
         facturaContenido.append("Total: $").append(df.format(totalisimo)).append("\n");
-        facturaContenido.append("--------------------------------------------------------------------\n");
+        facturaContenido.append("------------------------------------------------------------------------------------\n");
         facturaContenido.append("¡Gracias por su compra!\n");
         facturaContenido.append("  SIUUUUUUUUUUUUUUUU\n");
 
